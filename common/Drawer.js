@@ -3,11 +3,20 @@ import { Text, Block, Input, Button } from 'galio-framework';
 import { StyleSheet, Image } from 'react-native';
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import HomeScreen from '../screens/Accountant/HomeScreen';
+import MyAccountScreen from '../screens/Accountant/MyAccountScreen';
 import { DrawerNavigator } from 'react-navigation';
+import { createAppContainer } from "react-navigation";
 
 
-const Drawer = createDrawerNavigator();
+const AppNavigator = createDrawerNavigator({
+  MyAccount: {
+    screen: MyAccountScreen
+  }
+});
+
+export default createAppContainer(AppNavigator);
+
+/*const Drawer = createDrawerNavigator();
 
 function MyDrawer() {
   return (
@@ -19,6 +28,7 @@ function MyDrawer() {
 }
 
 export default MyDrawer;
+*/
 
 /*class Drawer extends Component {
     render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button } from 'galio-framework';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 
 class SignIn extends Component {
     render() {

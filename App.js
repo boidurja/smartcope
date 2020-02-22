@@ -11,6 +11,10 @@ import SignInScreen from './screens/Login/SignInScreen';
 import ForgotPasswordScreen from './screens/Login/ForgotPasswordScreen';
 import ChooseUserScreen from './screens/Login/ChooseUserScreen';
 import AccountantScreen from './screens/Accountant/AccountantScreen';
+import ProjectsScreen from './screens/Accountant/ProjectsScreen';
+import TasksScreen from './screens/Accountant/TasksScreen';
+import SuperAdminScreen from './screens/SuperAdmin/SuperAdminScreen';
+import AddNewOrganizationScreen from './screens/SuperAdmin/AddNewOrganizationScreen';
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 
 
@@ -26,6 +30,18 @@ const FirstNavGroup = createSwitchNavigator({
   },
   Accountant: {
     screen: AccountantScreen
+  },
+  Projects: {
+    screen: ProjectsScreen
+  },
+  Tasks: {
+    screen: TasksScreen
+  },
+  SuperAdmin: {
+    screen: SuperAdminScreen
+  },
+  AddNewOrganization: {
+    screen: AddNewOrganizationScreen
   }
 })
 

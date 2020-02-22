@@ -14,7 +14,7 @@ class ChooseUser extends Component {
                 </Button>
             </Block>
             <Block style={ styles.childBlockStyle }>
-                <Button round style={ styles.btn }>
+                <Button round style={ styles.btn } onPress={() => this.props.navigation.navigate('SuperAdmin')}>
                     <Text style={ styles.txtColor }>
                         Super Admin
                     </Text>

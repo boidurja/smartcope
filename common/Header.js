@@ -8,8 +8,13 @@ import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 export default function Header(props) {
     return (
         <Block style={ styles.header }>
-            <Ionicons name="md-menu" size={32} color="grey" onPress={() => this.props.navigation.openDrawer()}/>
-            <Text style={ styles.title }>{ props.title }</Text>
+            <Block>
+                <Ionicons name="md-menu" size={32} color="grey" />
+                <Text style={ styles.title }>{ props.title }</Text>
+            </Block>
+            <Block>
+                <Ionicons name="md-search" size={32} color="grey" />
+            </Block>
         </Block>
     )
 }
@@ -20,10 +25,11 @@ const styles = StyleSheet.create({
         height: 90,
         paddingTop: 40,
         flexDirection: 'row',
-        paddingLeft: 10
+        paddingLeft: 10,
+        justifyContent: 'space-between'
     },
     title: {
         marginLeft: 50,
-        marginTop: 6
+        marginTop: -26
     }
 });
