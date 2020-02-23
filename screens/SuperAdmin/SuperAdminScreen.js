@@ -18,7 +18,7 @@ class SuperAdmin extends Component {
                         <Text muted>Activated</Text>
                     </Block>
                     <Block>
-                        <Button round size="small" style={ styles.btnOn }>
+                        <Button round size="small" style={ styles.btnOn } onPress={() => this.props.navigation.navigate('OrganizationMembers')} >
                             Online
                         </Button>
                     </Block>

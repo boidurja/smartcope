@@ -6,7 +6,7 @@ class MyAccount extends Component {
     render() {
         return (
             <Block>
-                <Text>My Account</Text>
+                <Text>My Account Screen</Text>
             </Block>
 
 

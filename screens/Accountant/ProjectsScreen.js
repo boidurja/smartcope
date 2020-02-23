@@ -21,7 +21,10 @@ class Projects extends Component {
                         <Text>Rs. 1000</Text>
                     </Block>
                     <Block style={ styles.rightStyle }>
-                        <Ionicons name="ios-arrow-forward" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Tasks')} />
+                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Tasks')}>
+                            
+                        </Button>
+                        {/*<Ionicons name="ios-arrow-forward" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Tasks')} />*/}
                     </Block>
                 </Block>
             </Card>
@@ -33,7 +36,7 @@ class Projects extends Component {
 const styles = StyleSheet.create({
     blockStyle: {
         flex: 1,
-        paddingHorizontal: 20
+        paddingHorizontal: 10
     },
     cardStyle: {
         padding: 20
@@ -46,8 +49,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     iconStyle: {
-        color: 'grey',
-        fontSize: 32
+        width: 30,
+        height: 30,
+        backgroundColor: 'white'
     },
     rightStyle: {
         marginTop: -20

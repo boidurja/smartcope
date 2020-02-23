@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgb(190,248,255)'
     },
     txtColor: {
-        color: 'rgb(112,112,112)'
+        color: 'rgb(112,112,112)',
+        fontSize: 17
     }
 });
 

@@ -10,7 +10,7 @@ export default function Header(props) {
         <Block style={ styles.header }>
             <Block>
                 <Ionicons name="md-menu" size={32} color="grey" />
-                <Text style={ styles.title }>{ props.title }</Text>
+                <Text style={ styles.title } p>{ props.title }</Text>
             </Block>
             <Block>
                 <Ionicons name="md-search" size={32} color="grey" />
@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
     },
     title: {
         marginLeft: 50,
-        marginTop: -26
+        marginTop: -28
     }
 });

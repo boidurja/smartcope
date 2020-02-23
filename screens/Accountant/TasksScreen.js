@@ -23,6 +23,7 @@ class Tasks extends Component {
                 </Block>
                 <Card borderless style={ styles.priceBreakup }>
                     <Block style={ styles.spaceBetweenCardItems}>
+                        <Block style={{ flexDirection: 'row' }}>
                             <Block>
                                 <Image source={require('../../assets/images/man.jpg')} style={ styles.image } />
                             </Block>
@@ -30,6 +31,7 @@ class Tasks extends Component {
                                 <Text p>Prateek Patel</Text>
                                 <Text muted>22-06-2019</Text>
                             </Block>
+                        </Block>
                         <Block>
                             <Text>Rs. 100</Text>
                         </Block>
@@ -37,13 +39,15 @@ class Tasks extends Component {
                 </Card>
                 <Card borderless style={ styles.priceBreakup }>
                     <Block style={ styles.spaceBetweenCardItems}>
+                        <Block style={{ flexDirection: 'row' }}>
                             <Block>
                                 <Image source={require('../../assets/images/man.jpg')} style={ styles.image } />
                             </Block>
                             <Block style={ styles.center }>    
-                                <Text p>Prateek Patel</Text>
+                                <Text p>Ramesh Pawar</Text>
                                 <Text muted>22-06-2019</Text>
                             </Block>
+                        </Block>
                         <Block>
                             <Text>Rs. 100</Text>
                         </Block>
@@ -58,7 +62,7 @@ class Tasks extends Component {
 const styles = StyleSheet.create({
     blockStyle: {
         flex: 1,
-        paddingHorizontal: 20
+        paddingHorizontal: 10
     },
     cardStyle: {
         padding: 20
@@ -89,7 +93,7 @@ const styles = StyleSheet.create({
         borderRadius: 25
     },
     center: {
-        marginLeft: -80
+        marginLeft: 10
     }
 });
 
