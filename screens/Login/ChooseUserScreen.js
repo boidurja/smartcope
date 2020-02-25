@@ -21,21 +21,21 @@ class ChooseUser extends Component {
                 </Button>
             </Block>
             <Block style={ styles.childBlockStyle }>
-                <Button round style={ styles.btn }>
+                <Button round style={ styles.btn } onPress={() => this.props.navigation.navigate('Admin')}>
                     <Text style={ styles.txtColor }>
                         Admin
                     </Text>
                 </Button>
             </Block>
             <Block style={ styles.childBlockStyle }>
-                <Button round style={ styles.btn }>
+                <Button round style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksOpen')}>
                     <Text style={ styles.txtColor }>
                         Manager
                     </Text>
                 </Button>
             </Block>
             <Block style={ styles.childBlockStyle }>
-                <Button round style={ styles.btn }>
+                <Button round style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksOpen')}>
                     <Text style={ styles.txtColor }>
                         Team Member
                     </Text>

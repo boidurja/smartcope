@@ -5,19 +5,33 @@ import * as Font from 'expo-font';
 import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+//import AppNavigator from './navigation/AppNavigator';
 
-import AppNavigator from './navigation/AppNavigator';
 import SignInScreen from './screens/Login/SignInScreen';
 import ForgotPasswordScreen from './screens/Login/ForgotPasswordScreen';
 import ChooseUserScreen from './screens/Login/ChooseUserScreen';
+
+import AccountantHome from './screens/Accountant/AccountantHome';
 import AccountantScreen from './screens/Accountant/AccountantScreen';
 import ProjectsScreen from './screens/Accountant/ProjectsScreen';
 import TasksScreen from './screens/Accountant/TasksScreen';
+
 import SuperAdminScreen from './screens/SuperAdmin/SuperAdminScreen';
 import AddNewOrganizationScreen from './screens/SuperAdmin/AddNewOrganizationScreen';
 import OrganizationMembersScreen from './screens/SuperAdmin/OrganizationMembersScreen';
 import AddNewUserScreen from './screens/SuperAdmin/AddNewUserScreen';
 import EditNewUserScreen from './screens/SuperAdmin/EditNewUserScreen';
+
+import AdminScreen from './screens/Admin/AdminScreen';
+import AddNewProjectScreen from './screens/Admin/AddNewProjectScreen';
+import ProjectTasksScreen from './screens/Admin/ProjectTasksScreen';
+import AddNewTaskScreen from './screens/Admin/AddNewTaskScreen';
+import EditTaskScreen from './screens/Admin/EditTaskScreen';
+import TasksOpenScreen from './screens/Admin/TasksOpenScreen';
+import TasksInProgressScreen from './screens/Admin/TasksInProgressScreen';
+import ConvertToCompleteScreen from './screens/Admin/ConvertToCompleteScreen';
+import TasksCompletedScreen from './screens/Admin/TasksCompletedScreen';
+
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 
 
@@ -32,6 +46,9 @@ const FirstNavGroup = createSwitchNavigator({
     screen: ChooseUserScreen
   },
 
+  AccountantHome: {
+    screen: AccountantHome
+  },
   Accountant: {
     screen: AccountantScreen
   },
@@ -56,6 +73,34 @@ const FirstNavGroup = createSwitchNavigator({
   },
   EditNewUser: {
     screen: EditNewUserScreen
+  },
+
+  Admin: {
+    screen: AdminScreen
+  },
+  AddNewProject: {
+    screen: AddNewProjectScreen
+  },
+  ProjectTasks: {
+    screen: ProjectTasksScreen
+  },
+  AddNewTask: {
+    screen: AddNewTaskScreen
+  },
+  EditTask: {
+    screen: EditTaskScreen
+  },
+  TasksOpen: {
+    screen: TasksOpenScreen
+  },
+  TasksInProgress: {
+    screen: TasksInProgressScreen
+  },
+  ConvertToComplete: {
+    screen: ConvertToCompleteScreen
+  },
+  TasksCompleted: {
+    screen: TasksCompletedScreen
   }
 })
 

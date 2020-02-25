@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 import Header from '../../common/Header';
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 //import { Drawer } from '../../common/Drawer';
@@ -11,23 +11,25 @@ class Projects extends Component {
         <Block style={ styles.blockStyle }>
             <Header title="Project 1" />
             {/*<Drawer />*/}
-            <Card borderless shadow style={ styles.cardStyle }>
-                <Block style={ styles.spaceBetween}>
-                    <Block>
-                        <Text h5 style={ styles.textStyle }>Task 1</Text>
-                        <Text muted>03-08-2019</Text>
+            <ScrollView>
+                <Card borderless shadow style={ styles.cardStyle }>
+                    <Block style={ styles.spaceBetween}>
+                        <Block>
+                            <Text h5 style={ styles.textStyle }>Task 1</Text>
+                            <Text muted>03-08-2019</Text>
+                        </Block>
+                        <Block style={ styles.price }>
+                            <Text>Rs. 1000</Text>
+                        </Block>
+                        <Block style={ styles.rightStyle }>
+                            <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Tasks')}>
+                                
+                            </Button>
+                            {/*<Ionicons name="ios-arrow-forward" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Tasks')} />*/}
+                        </Block>
                     </Block>
-                    <Block style={ styles.price }>
-                        <Text>Rs. 1000</Text>
-                    </Block>
-                    <Block style={ styles.rightStyle }>
-                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Tasks')}>
-                            
-                        </Button>
-                        {/*<Ionicons name="ios-arrow-forward" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Tasks')} />*/}
-                    </Block>
-                </Block>
-            </Card>
+                </Card>
+            </ScrollView>
         </Block>
     );
     }
@@ -46,7 +48,8 @@ const styles = StyleSheet.create({
     },
     spaceBetween: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        marginTop: -30
     },
     iconStyle: {
         width: 30,

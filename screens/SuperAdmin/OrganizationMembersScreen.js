@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, Image, ScrollView } from 'react-native';
 import Header from '../../common/Header';
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 //import { Drawer } from '../../common/Drawer';
@@ -11,68 +11,70 @@ class OrganizationMembers extends Component {
         <Block style={ styles.blockStyle }>
             <Header title="Organizations" />
             {/*<Drawer />*/}
-            <Card borderless style={ styles.cardStyle }>
-                <Block style={ styles.spaceBetween}>
-                    <Block>
-                        <Text h5 style={ styles.textStyle }>Organization 1</Text>
-                        <Text muted style={ styles.expirationDate }>Expiration Date: 03-08-2019</Text>
-                        
-                    </Block>
-                    <Block style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <Button round style={ styles.addBtn } onPress={() => this.props.navigation.navigate('AddNewUser')} >
-                            <Text style={{ fontSize: 12, color: 'white' }}>
-                                Add User
-                            </Text>
-                        </Button>
-                        <Button round style={ styles.deleteBtn } onPress={() => this.props.navigation.navigate('EditNewUser')}>
-                            <Text style={{ fontSize: 12, color: 'white' }}>
-                                Delete
-                            </Text>
-                        </Button>
-                    </Block>
-                </Block>
-                <Block style={ styles.contactInfo}>
-                    <Text muted>+1 654 893 8098</Text>
-                    <Text>root@organization.com</Text>
-                </Block>
-                <Text muted style={ styles.totalMembers }>Total Members: 2</Text>
-                <Card borderless style={ styles.members }>
-                    <Block style={ styles.spaceBetweenCardItems}>
-                        <Block style={{ flexDirection: 'row'}}>
-                            <Block>
-                                <Image source={require('../../assets/images/man.jpg')} style={ styles.image } />
-                            </Block>
-                            <Block style={ styles.center }>    
-                                <Text p>Prateek Patel</Text>
-                                <Text muted>Admin</Text>
-                            </Block>
-                        </Block>
+            <ScrollView>
+                <Card borderless style={ styles.cardStyle }>
+                    <Block style={ styles.spaceBetween}>
                         <Block>
-                            <Button round style={ styles.editRoleBtn } onPress={() => this.props.navigation.navigate('AddNewUser')}>
-                                <Text style={{ fontSize: 12, color: 'white' }}>Edit Role</Text>
+                            <Text h5 style={ styles.textStyle }>Organization 1</Text>
+                            <Text muted style={ styles.expirationDate }>Expiration Date: 03-08-2019</Text>
+                            
+                        </Block>
+                        <Block style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <Button round style={ styles.addBtn } onPress={() => this.props.navigation.navigate('AddNewUser')} >
+                                <Text style={{ fontSize: 12, color: 'white' }}>
+                                    Add User
+                                </Text>
+                            </Button>
+                            <Button round style={ styles.deleteBtn } onPress={() => this.props.navigation.navigate('EditNewUser')}>
+                                <Text style={{ fontSize: 12, color: 'white' }}>
+                                    Delete
+                                </Text>
                             </Button>
                         </Block>
                     </Block>
-                </Card>
-                <Card borderless style={ styles.members }>
-                    <Block style={ styles.spaceBetweenCardItems}>
-                        <Block style={{ flexDirection: 'row' }}>
-                            <Block>
-                                <Image source={require('../../assets/images/man.jpg')} style={ styles.image } />
-                            </Block>
-                            <Block style={ styles.center }>    
-                                <Text p>Rohit Patil</Text>
-                                <Text muted>manager</Text>
-                            </Block>
-                        </Block>
-                        <Block>
-                        <Button round style={ styles.editRoleBtn } onPress={() => this.props.navigation.navigate('AddNewUser')}>
-                            <Text style={{ fontSize: 12, color: 'white' }}>Edit Role</Text>
-                        </Button>
-                        </Block>
+                    <Block style={ styles.contactInfo}>
+                        <Text muted>+1 654 893 8098</Text>
+                        <Text>root@organization.com</Text>
                     </Block>
+                    <Text muted style={ styles.totalMembers }>Total Members: 2</Text>
+                    <Card borderless style={ styles.members }>
+                        <Block style={ styles.spaceBetweenCardItems}>
+                            <Block style={{ flexDirection: 'row'}}>
+                                <Block>
+                                    <Image source={require('../../assets/images/man.jpg')} style={ styles.image } />
+                                </Block>
+                                <Block style={ styles.center }>    
+                                    <Text p>Prateek Patel</Text>
+                                    <Text muted>Admin</Text>
+                                </Block>
+                            </Block>
+                            <Block>
+                                <Button round style={ styles.editRoleBtn } onPress={() => this.props.navigation.navigate('AddNewUser')}>
+                                    <Text style={{ fontSize: 12, color: 'white' }}>Edit Role</Text>
+                                </Button>
+                            </Block>
+                        </Block>
+                    </Card>
+                    <Card borderless style={ styles.members }>
+                        <Block style={ styles.spaceBetweenCardItems}>
+                            <Block style={{ flexDirection: 'row' }}>
+                                <Block>
+                                    <Image source={require('../../assets/images/man.jpg')} style={ styles.image } />
+                                </Block>
+                                <Block style={ styles.center }>    
+                                    <Text p>Rohit Patil</Text>
+                                    <Text muted>manager</Text>
+                                </Block>
+                            </Block>
+                            <Block>
+                            <Button round style={ styles.editRoleBtn } onPress={() => this.props.navigation.navigate('AddNewUser')}>
+                                <Text style={{ fontSize: 12, color: 'white' }}>Edit Role</Text>
+                            </Button>
+                            </Block>
+                        </Block>
+                    </Card>
                 </Card>
-            </Card>
+            </ScrollView>
         </Block>
     );
     }
@@ -105,7 +107,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: -20,
+        marginTop: -60,
         marginBottom: 16
     },
     contactInfo: {
@@ -138,7 +140,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: -20
+        marginTop: -50
     },
     image: {
         height: 50,

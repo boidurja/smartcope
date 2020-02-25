@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 import Header from '../../common/Header';
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 //import DrawerLeft from '../../common/DrawerLeft';
@@ -11,20 +11,22 @@ class Accountant extends Component {
         <Block style={ styles.blockStyle }>
             <Header title="Accounts" />
             {/*<DrawerLeft />*/}
-            <Card borderless shadow style={ styles.cardStyle } >
-                <Block style={ styles.spaceBetween}>
-                    <Block>
-                        <Text h5 style={ styles.textStyle }>Project 1</Text>
-                        <Text muted>3 accounted tasks</Text>
+            <ScrollView>
+                <Card borderless shadow style={ styles.cardStyle } >
+                    <Block style={ styles.spaceBetween}>
+                        <Block>
+                            <Text h5 style={ styles.textStyle }>Project 1</Text>
+                            <Text muted>3 accounted tasks</Text>
+                        </Block>
+                        <Block>
+                            <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Projects')}>
+                                
+                            </Button>
+                            {/*<Ionicons name="ios-arrow-forward" size={32} style={ styles.iconStyle} onPress={() => this.props.navigation.navigate('Projects')}/>*/}
+                        </Block>
                     </Block>
-                    <Block>
-                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Projects')}>
-                            
-                        </Button>
-                        {/*<Ionicons name="ios-arrow-forward" size={32} style={ styles.iconStyle} onPress={() => this.props.navigation.navigate('Projects')}/>*/}
-                    </Block>
-                </Block>
-            </Card>
+                </Card>
+            </ScrollView>
         </Block>
     );
     }
@@ -43,7 +45,8 @@ const styles = StyleSheet.create({
     },
     spaceBetween: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        marginTop: -30
     },
     iconStyle: {
         marginTop: -20,

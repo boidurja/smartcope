@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 import Header from '../../common/Header';
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 //import { Drawer } from '../../common/Drawer';
@@ -11,35 +11,37 @@ class SuperAdmin extends Component {
         <Block style={ styles.blockStyle }>
             <Header title="Organizations" />
             {/*<Drawer />*/}
-            <Card borderless shadow style={ styles.cardStyle } >
-                <Block style={ styles.spaceBetween}>
-                    <Block>
-                        <Text h5 style={ styles.textStyle }>Organization 1</Text>
-                        <Text muted>Activated</Text>
+            <ScrollView>
+                <Card borderless shadow style={ styles.cardStyle } >
+                    <Block style={ styles.spaceBetween}>
+                        <Block>
+                            <Text h5 style={ styles.textStyle }>Organization 1</Text>
+                            <Text muted>Activated</Text>
+                        </Block>
+                        <Block>
+                            <Button round size="small" style={ styles.btnOn } onPress={() => this.props.navigation.navigate('OrganizationMembers')} >
+                                Online
+                            </Button>
+                        </Block>
                     </Block>
-                    <Block>
-                        <Button round size="small" style={ styles.btnOn } onPress={() => this.props.navigation.navigate('OrganizationMembers')} >
-                            Online
-                        </Button>
+                </Card>
+                <Card borderless shadow style={ styles.cardStyle } >
+                    <Block style={ styles.spaceBetween}>
+                        <Block>
+                            <Text h5 style={ styles.textStyle }>Organization 2</Text>
+                            <Text muted>Deactivated</Text>
+                        </Block>
+                        <Block>
+                            <Button round size="small" style={ styles.btnOff }>
+                                Offline
+                            </Button>
+                        </Block>
                     </Block>
-                </Block>
-            </Card>
-            <Card borderless shadow style={ styles.cardStyle } >
-                <Block style={ styles.spaceBetween}>
-                    <Block>
-                        <Text h5 style={ styles.textStyle }>Organization 2</Text>
-                        <Text muted>Deactivated</Text>
-                    </Block>
-                    <Block>
-                        <Button round size="small" style={ styles.btnOff }>
-                            Offline
-                        </Button>
-                    </Block>
-                </Block>
-            </Card>
-            <Button style={ styles.addBtn } round onPress={() => this.props.navigation.navigate('AddNewOrganization')}>
-                Add Organization
-            </Button>
+                </Card>
+                <Button style={ styles.addBtn } round onPress={() => this.props.navigation.navigate('AddNewOrganization')}>
+                    Add Organization
+                </Button>
+            </ScrollView>
         </Block>
     );
     }
@@ -59,7 +61,8 @@ const styles = StyleSheet.create({
     },
     spaceBetween: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        marginTop: -30
     },
     btnOn: {
         backgroundColor: 'green',
