@@ -4,7 +4,7 @@ import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
 import Header from '../../common/Header';
 //import DrawerLeft from '../../common/DrawerLeft';
 
-class TasksOpen extends Component {
+class TasksBlocked extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
@@ -15,14 +15,14 @@ class TasksOpen extends Component {
                         <Text h4>Organization 1</Text>
                     </Block>
                     <Block style={ styles.btnGroup } >
-                        <Button style={ styles.btnActive } >
-                            <Text style={ styles.textActive }>Open</Text>
+                        <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksOpen')}>
+                            <Text style={ styles.text }>Open</Text>
                         </Button>
                         <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
                             <Text style={ styles.text }>In Progress</Text>
                         </Button>
-                        <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksBlocked')}>
-                            <Text style={ styles.text }>Blocked</Text>
+                        <Button style={ styles.btnActive }>
+                            <Text style={ styles.textActive }>Blocked</Text>
                         </Button>
                         <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksCompleted')}>
                             <Text style={ styles.text }>Completed</Text>
@@ -36,66 +36,23 @@ class TasksOpen extends Component {
                                 <Text h5 style={{ marginBottom: 20 }}>Project 1</Text>
                                 <Text>Task name</Text>
                                 <Text muted style={ styles.textBackground } >Lorem</Text>
-                                <Text>Task Details:</Text>
-                                <Text muted style={ styles.textBackground } >Lor em ip s um Lo r em i ps um L or em ips um Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </Text>
-                                <Text>Latest Comments </Text>
-                                <Text muted style={ styles.textBackground } >Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem</Text>
+                                <Text>Assigned to</Text>
+                                <Text muted style={ styles.textBackground } >Lor em ip s um Lo r em i ps </Text>
+                                <Text>Task details </Text>
+                                <Text muted style={ styles.textBackground } >Lorem ipsum Lorem ipsum Lorem Lorem ipsum Lorem ipsum Lorem  Lorem ipsum Lorem ipsum Lorem  ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem</Text>
                             </Block>
                         </View>
                         <View style={{ flex: 1 }}>
-                            <Text>Status</Text>
-                            <Text style={{ color: 'grey', marginBottom: 30 }}>Lorem</Text>
+                            
                             <Block style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
                                 <Block>
-                                    <Text>Due Date</Text>
+                                    <Text>Block Date</Text>
                                     <Text p style={ styles.dates }>03-01-2010</Text>
                                 </Block>
                                 <Block>
-                                    <Text>Start Date</Text>
-                                    <Text p style={ styles.dates }>03-01-2010</Text>
+                                    <Text>Reason</Text>
+                                    <Text muted style={ styles.textBackground } >Lorem lore lorem loore ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem</Text>
                                 </Block>
-                                <Block>
-                                    <Text>End Date</Text>
-                                    <Text p style={ styles.dates }>03-01-2010</Text>
-                                </Block>
-                                <Button round style={ styles.startTaskBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
-                                    <Text style={{ color: 'white' }}>Start Task</Text>
-                                </Button>
-                            </Block>
-                        </View>
-                    </Block>
-                   
-                    <Block style={ styles.card }>
-                        <View style={{ flex: 2, marginRight: 10 }}>
-                            <Block style={{ flexDirection: 'column' }}>
-                                <Text h5 style={{ marginBottom: 20 }}>Project 2</Text>
-                                <Text>Task name</Text>
-                                <Text muted style={ styles.textBackground } >Lorem</Text>
-                                <Text>Task Details:</Text>
-                                <Text muted style={ styles.textBackground } >Lor em ip s um Lo r em i ps um L or em ips um Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </Text>
-                                <Text>Latest Comments </Text>
-                                <Text muted style={ styles.textBackground } >Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem</Text>
-                            </Block>
-                        </View>
-                        <View style={{ flex: 1 }}>
-                            <Text>Status</Text>
-                            <Text style={{ color: 'grey', marginBottom: 30 }}>Lorem</Text>
-                            <Block style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
-                                <Block>
-                                    <Text>Due Date</Text>
-                                    <Text p style={ styles.dates }>03-01-2010</Text>
-                                </Block>
-                                <Block>
-                                    <Text>Start Date</Text>
-                                    <Text p style={ styles.dates }>03-01-2010</Text>
-                                </Block>
-                                <Block>
-                                    <Text>End Date</Text>
-                                    <Text p style={ styles.dates }>03-01-2010</Text>
-                                </Block>
-                                <Button round style={ styles.startTaskBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
-                                    <Text style={{ color: 'white' }}>Start Task</Text>
-                                </Button>
                             </Block>
                         </View>
                     </Block>
@@ -181,4 +138,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default TasksOpen;
+export default TasksBlocked;

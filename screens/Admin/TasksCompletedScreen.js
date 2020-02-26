@@ -21,7 +21,7 @@ class TasksCompleted extends Component {
                         <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
                             <Text style={ styles.text }>In Progress</Text>
                         </Button>
-                        <Button style={ styles.btn }>
+                        <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksBlocked')}>
                             <Text style={ styles.text }>Blocked</Text>
                         </Button>
                         <Button style={ styles.btnActive }>
@@ -42,8 +42,8 @@ class TasksCompleted extends Component {
                                 <Text muted style={ styles.textBackground } >Lorem ipsum </Text>
                             </Block>
                         </View>
-                        <View style={{ flex: 1 }}>
-                            <Block style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-around' }}>
+                        <View>
+                            <Block style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
                                 <Block>
                                     <Text style={{ marginTop: 10 }}>Total Expense</Text>
                                     <Text h4 style={ styles.expenses }>1000/-</Text>

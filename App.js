@@ -30,7 +30,9 @@ import EditTaskScreen from './screens/Admin/EditTaskScreen';
 import TasksOpenScreen from './screens/Admin/TasksOpenScreen';
 import TasksInProgressScreen from './screens/Admin/TasksInProgressScreen';
 import ConvertToCompleteScreen from './screens/Admin/ConvertToCompleteScreen';
+import TasksBlockedScreen from './screens/Admin/TasksBlockedScreen';
 import TasksCompletedScreen from './screens/Admin/TasksCompletedScreen';
+import ConvertToBlockScreen from './screens/Admin/ConvertToBlockScreen';
 
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 
@@ -99,8 +101,14 @@ const FirstNavGroup = createSwitchNavigator({
   ConvertToComplete: {
     screen: ConvertToCompleteScreen
   },
+  TasksBlocked: {
+    screen: TasksBlockedScreen
+  },
   TasksCompleted: {
     screen: TasksCompletedScreen
+  },
+  ConvertToBlock: {
+    screen: ConvertToBlockScreen
   }
 })
 

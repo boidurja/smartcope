@@ -18,10 +18,10 @@ class TasksInProgress extends Component {
                         <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksOpen')}>
                             <Text style={ styles.text }>Open</Text>
                         </Button>
-                        <Button style={ styles.btnActive }>
+                        <Button style={ styles.btnActive } >
                             <Text style={ styles.textActive }>In Progress</Text>
                         </Button>
-                        <Button style={ styles.btn }>
+                        <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksBlocked')}>
                             <Text style={ styles.text }>Blocked</Text>
                         </Button>
                         <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksCompleted')}>
@@ -75,7 +75,7 @@ class TasksInProgress extends Component {
                             </View>
                         </Block>
                         <Block style={{ flex:1, flexDirection: 'row', justifyContent: 'space-between', marginTop: -30, marginBottom: -40 }}>
-                            <Button round style={ styles.blockedBtn } onPress={() => this.props.navigation.navigate('')}>
+                            <Button round style={ styles.blockedBtn } onPress={() => this.props.navigation.navigate('ConvertToBlock')}>
                                 <Text style={{ color: 'rgb(68,125,132)' }}>Block Task</Text>
                             </Button>
                             <Button round style={ styles.completedBtn } onPress={() => this.props.navigation.navigate('ConvertToComplete')}>

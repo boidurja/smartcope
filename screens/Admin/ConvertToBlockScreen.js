@@ -3,23 +3,17 @@ import { Text, Block, Input, Button, Card } from 'galio-framework';
 import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
 import Header from '../../common/Header';
 
-class ConvertToComplete extends Component {
-    
+class ConvertToBlock extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
                 <Header title="" />
                 
-                <Text h4 style={{ color: 'rgb(24,96,105)' }}>Convert to Complete</Text>
+                <Text h4 style={{ color: 'rgb(24,96,105)' }}>Convert to Block</Text>
                 <Text style={{ marginTop: 40, color: 'rgb(24,96,105)' }}>Task Name</Text>
                 <Text>Lorem Ipsum</Text>
 
-                <Text style={{ marginTop: 40, color: 'rgb(24,96,105)' }}>Expense</Text>
-                
-                <Input style={{ width: '40%'}} placeholder="1000"></Input>
-                
-
-                <Text style={{ marginTop: 40, color: 'rgb(24,96,105)' }}>Details</Text>
+                <Text style={{ marginTop: 40, color: 'rgb(24,96,105)' }}>Reason</Text>
                 <Input placeholder="Enter details here">
                 
                 </Input>
@@ -28,7 +22,7 @@ class ConvertToComplete extends Component {
                     <Button round style={ styles.cancelBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
                         <Text style={{ color: 'rgb(68,125,132)' }}>Cancel</Text>
                     </Button>
-                    <Button round style={ styles.submitBtn } onPress={() => this.props.navigation.navigate('TasksCompleted')}>
+                    <Button round style={ styles.submitBtn } onPress={() => this.props.navigation.navigate('TasksBlocked')}>
                         <Text style={{ color: 'white' }}>Submit</Text>
                     </Button>
                 </Block>
@@ -61,4 +55,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ConvertToComplete;
+export default ConvertToBlock;
