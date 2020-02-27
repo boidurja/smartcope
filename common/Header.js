@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Text, Block, Input, Button } from 'galio-framework';
 import { StyleSheet } from 'react-native';
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
-//import { Header } from 'react-native/Libraries/NewAppScreen';
-
 
 export default function Header(props) {
     return (

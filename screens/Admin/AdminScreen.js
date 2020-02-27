@@ -1,38 +1,38 @@
 import React, { Component } from 'react';
-import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet, ScrollView } from 'react-native';
+import { Text, Block, Button, Card } from 'galio-framework';
+import { StyleSheet, ScrollView, Dimensions } from 'react-native';
 import Header from '../../common/Header';
-//import DrawerLeft from '../../common/DrawerLeft';
+
+const height = Dimensions.get('window').height - 147;
 
 class Admin extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
                 <Header title="Organization 1" />
-                {/*<DrawerLeft />*/}
                 <ScrollView>
-                    <Block style={ styles.btnPosition }>
-                        <Button style={ styles.addBtn } round onPress={() => this.props.navigation.navigate('AddNewProject')} >
-                            <Text style={ styles.btnText}>
-                                Add
-                            </Text>
-                        </Button>
-                    </Block>
-                    <Card borderless shadow style={ styles.cardStyle } >
-                        <Block style={ styles.spaceBetween}>
-                            <Block>
-                                <Text h5 style={ styles.textStyle }>Project 1</Text>
-                                <Text muted>02-01-2010</Text>
-                            </Block>
-                            <Block>
-                                <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasks')}>
-                                    
-                                </Button>
-                                {/*<Ionicons name="ios-arrow-forward" size={32} style={ styles.iconStyle} onPress={() => this.props.navigation.navigate('Projects')}/>*/}
-                            </Block>
+                    <Block style={{ minHeight: height }}>
+                        <Block style={ styles.btnPosition }>
+                            <Button style={ styles.addBtn } round onPress={() => this.props.navigation.navigate('AddNewProject')} >
+                                <Text style={ styles.btnText}>
+                                    Add
+                                </Text>
+                            </Button>
                         </Block>
-                    </Card>
-            
+                        <Card borderless shadow style={ styles.cardStyle } >
+                            <Block style={ styles.spaceBetween}>
+                                <Block>
+                                    <Text h5 style={ styles.textStyle }>Project 1</Text>
+                                    <Text muted>02-01-2010</Text>
+                                </Block>
+                                <Block>
+                                    <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasks')}>
+                                    </Button>
+                                </Block>
+                            </Block>
+                        </Card>
+                    </Block>
+
                     <Block style={ styles.footer }>
                         <Block style={ styles.footerBtns }>
                             <Button style={ styles.footerBtn } onPress={() => this.props.navigation.navigate('Admin')}>

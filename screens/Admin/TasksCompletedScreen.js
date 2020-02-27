@@ -1,63 +1,95 @@
 import React, { Component } from 'react';
-import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, Block, Button } from 'galio-framework';
+import { StyleSheet, View, ScrollView, Dimensions } from 'react-native';
 import Header from '../../common/Header';
-//import DrawerLeft from '../../common/DrawerLeft';
+
+const height = Dimensions.get('window').height - 147;
 
 class TasksCompleted extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
                 <Header title="" />
-                {/*<DrawerLeft />*/}
+                
                 <ScrollView>
-                    <Block style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <Text h4>Organization 1</Text>
-                    </Block>
-                    <Block style={ styles.btnGroup } >
-                        <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksOpen')}>
-                            <Text style={ styles.text }>Open</Text>
-                        </Button>
-                        <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
-                            <Text style={ styles.text }>In Progress</Text>
-                        </Button>
-                        <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksBlocked')}>
-                            <Text style={ styles.text }>Blocked</Text>
-                        </Button>
-                        <Button style={ styles.btnActive }>
-                            <Text style={ styles.textActive }>Completed</Text>
-                        </Button>
+                    <Block style={{ minHeight: height }}>
+                        <Block style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <Text h4>Organization 1</Text>
+                        </Block>
+                        <Block style={ styles.btnGroup } >
+                            <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksOpen')}>
+                                <Text style={ styles.text }>Open</Text>
+                            </Button>
+                            <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
+                                <Text style={ styles.text }>In Progress</Text>
+                            </Button>
+                            <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksBlocked')}>
+                                <Text style={ styles.text }>Blocked</Text>
+                            </Button>
+                            <Button style={ styles.btnActive }>
+                                <Text style={ styles.textActive }>Completed</Text>
+                            </Button>
+                            
+                        </Block>
                         
-                    </Block>
-                    
-                    <Block style={ styles.card }>
-                        <View style={{ flex: 2, marginRight: 10 }}>
-                            <Block style={{ flexDirection: 'column' }}>
-                                <Text h5 style={{ marginBottom: 20 }}>Project 1</Text>
-                                <Text>Task name</Text>
-                                <Text muted style={ styles.textBackground } >Lorem</Text>
-                                <Text>Task Details:</Text>
-                                <Text muted style={ styles.textBackground } >Lor em ip s um Lo r em i ps um L or em ips um Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </Text>
-                                <Text>Assigned to </Text>
-                                <Text muted style={ styles.textBackground } >Lorem ipsum </Text>
-                            </Block>
-                        </View>
-                        <View>
-                            <Block style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
-                                <Block>
-                                    <Text style={{ marginTop: 10 }}>Total Expense</Text>
-                                    <Text h4 style={ styles.expenses }>1000/-</Text>
+                        <Block style={ styles.card }>
+                            <View style={{ flex: 2, marginRight: 10 }}>
+                                <Block style={{ flexDirection: 'column' }}>
+                                    <Text h5 style={{ marginBottom: 20 }}>Project 1</Text>
+                                    <Text>Task name</Text>
+                                    <Text muted style={ styles.textBackground } >Lorem</Text>
+                                    <Text>Task Details:</Text>
+                                    <Text muted style={ styles.textBackground } >Lor em ip s um Lo r em i ps um L or em ips um Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </Text>
+                                    <Text>Assigned to </Text>
+                                    <Text muted style={ styles.textBackground } >Lorem ipsum </Text>
                                 </Block>
-                                <Block>
-                                    <Text>Start Date</Text>
-                                    <Text p style={ styles.dates }>03-01-2010</Text>
+                            </View>
+                            <View>
+                                <Block style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
+                                    <Block>
+                                        <Text style={{ marginTop: 10 }}>Total Expense</Text>
+                                        <Text h4 style={ styles.expenses }>1000/-</Text>
+                                    </Block>
+                                    <Block>
+                                        <Text>Start Date</Text>
+                                        <Text p style={ styles.dates }>03-01-2010</Text>
+                                    </Block>
+                                    <Block>
+                                        <Text>Complete Date</Text>
+                                        <Text p style={ styles.dates }>03-01-2010</Text>
+                                    </Block>
                                 </Block>
-                                <Block>
-                                    <Text>Complete Date</Text>
-                                    <Text p style={ styles.dates }>03-01-2010</Text>
+                            </View>
+                        </Block>
+                        <Block style={ styles.card }>
+                            <View style={{ flex: 2, marginRight: 10 }}>
+                                <Block style={{ flexDirection: 'column' }}>
+                                    <Text h5 style={{ marginBottom: 20 }}>Project 1</Text>
+                                    <Text>Task name</Text>
+                                    <Text muted style={ styles.textBackground } >Lorem</Text>
+                                    <Text>Task Details:</Text>
+                                    <Text muted style={ styles.textBackground } >Lor em ip s um Lo r em i ps um L or em ips um Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </Text>
+                                    <Text>Assigned to </Text>
+                                    <Text muted style={ styles.textBackground } >Lorem ipsum </Text>
                                 </Block>
-                            </Block>
-                        </View>
+                            </View>
+                            <View>
+                                <Block style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
+                                    <Block>
+                                        <Text style={{ marginTop: 10 }}>Total Expense</Text>
+                                        <Text h4 style={ styles.expenses }>1000/-</Text>
+                                    </Block>
+                                    <Block>
+                                        <Text>Start Date</Text>
+                                        <Text p style={ styles.dates }>03-01-2010</Text>
+                                    </Block>
+                                    <Block>
+                                        <Text>Complete Date</Text>
+                                        <Text p style={ styles.dates }>03-01-2010</Text>
+                                    </Block>
+                                </Block>
+                            </View>
+                        </Block>
                     </Block>
 
                     <Block style={ styles.footer }>
@@ -95,7 +127,8 @@ const styles = StyleSheet.create({
     dates: {
         backgroundColor: 'rgb(213,234,236)', 
         paddingHorizontal: 10,
-        borderRadius: 5
+        borderRadius: 5,
+        fontSize: 14
     },
     expenses: {
         backgroundColor: 'rgb(213,234,236)', 

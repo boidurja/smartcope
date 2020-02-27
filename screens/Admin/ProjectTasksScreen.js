@@ -106,8 +106,10 @@ const styles = StyleSheet.create({
     },
     dates: {
         backgroundColor: 'rgb(213,234,236)', 
-        paddingHorizontal: 10
-    }
+        paddingHorizontal: 10,
+        borderRadius: 5,
+        fontSize: 14
+    }   
 });
 
 export default ProjectTasks;

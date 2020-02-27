@@ -51,7 +51,7 @@ function MyDrawer() {
       
       <Drawer.Screen name="My Account" component={MyAccountScreen} />
       <Drawer.Screen name="Home" component={AccountantScreen} />
-      <Drawer.Screen name="Logout" component={SignInScreen} />
+      
     </Drawer.Navigator>
   );
 }

@@ -1,86 +1,88 @@
 import React, { Component } from 'react';
-import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, Block, Input, Button } from 'galio-framework';
+import { StyleSheet, View, ScrollView, Dimensions } from 'react-native';
 import Header from '../../common/Header';
-//import DrawerLeft from '../../common/DrawerLeft';
+
+const height = Dimensions.get('window').height - 147;
 
 class TasksInProgress extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
                 <Header title="" />
-                {/*<DrawerLeft />*/}
                 <ScrollView>
-                    <Block style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <Text h4>Organization 1</Text>
-                    </Block>
-                    <Block style={ styles.btnGroup } >
-                        <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksOpen')}>
-                            <Text style={ styles.text }>Open</Text>
-                        </Button>
-                        <Button style={ styles.btnActive } >
-                            <Text style={ styles.textActive }>In Progress</Text>
-                        </Button>
-                        <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksBlocked')}>
-                            <Text style={ styles.text }>Blocked</Text>
-                        </Button>
-                        <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksCompleted')}>
-                            <Text style={ styles.text }>Completed</Text>
-                        </Button>
-                        
-                    </Block>
-                    
-                    <Block style={ styles.card }>
-                        <Block style={{ flex: 1, flexDirection: 'row' }}>
-                            <View style={{ flex: 2, marginRight: 10 }}>
-                                <Block>
-                                    <Text h5 style={{ marginBottom: 20 }}>Project 3</Text>
-                                    <Text>Task name</Text>
-                                    <Text muted style={ styles.textBackground } >Lorem</Text>
-                                    <Text>Task Details:</Text>
-                                    <Text muted style={ styles.textBackground } >Lor em ip s um Lo r em i ps um L or em ips um Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </Text>
-                                    <Text>Latest Comments </Text>
-                                    <Text muted style={ styles.textBackground } >Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem</Text>
-                                    <Text>Owner / User</Text>
-                                    <Text muted style={ styles.textBackground } >Lorem Ipsum</Text>
-                                </Block>
-                            </View>
-                            <View style={{ flex: 1 }}>
-                                <Button round style={ styles.addExpenseBtn }>
-                                    <Text>Add Expense</Text>
-                                </Button>
-                                
-                                <Block style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
-                                    <Block>
-                                        <Text style={{ marginTop: 10 }}>Total Expense</Text>
-                                        <Text h4 style={ styles.expenses }>1000/-</Text>
-                                    </Block>
-                                    <Block>
-                                        <Text>Status</Text>
-                                        <Text style={{ fontSize: 13 }}>Lorem ipsum</Text>
-                                    </Block>
-                                    <Block>
-                                        <Text>Due Date</Text>
-                                        <Text p style={ styles.dates }>03-01-2010</Text>
-                                    </Block>
-                                    <Block>
-                                        <Text>Start Date</Text>
-                                        <Text p style={ styles.dates }>03-01-2010</Text>
-                                    </Block>
-                                    <Block>
-                                        <Text>End Date</Text>
-                                        <Text p style={ styles.dates }>03-01-2010</Text>
-                                    </Block>
-                                </Block>
-                            </View>
+                    <Block style={{ minHeight: height }}>
+                        <Block style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <Text h4>Organization 1</Text>
                         </Block>
-                        <Block style={{ flex:1, flexDirection: 'row', justifyContent: 'space-between', marginTop: -30, marginBottom: -40 }}>
-                            <Button round style={ styles.blockedBtn } onPress={() => this.props.navigation.navigate('ConvertToBlock')}>
-                                <Text style={{ color: 'rgb(68,125,132)' }}>Block Task</Text>
+                        <Block style={ styles.btnGroup } >
+                            <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksOpen')}>
+                                <Text style={ styles.text }>Open</Text>
                             </Button>
-                            <Button round style={ styles.completedBtn } onPress={() => this.props.navigation.navigate('ConvertToComplete')}>
-                                <Text style={{ color: 'white' }}>Task Completed</Text>
+                            <Button style={ styles.btnActive } >
+                                <Text style={ styles.textActive }>In Progress</Text>
                             </Button>
+                            <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksBlocked')}>
+                                <Text style={ styles.text }>Blocked</Text>
+                            </Button>
+                            <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksCompleted')}>
+                                <Text style={ styles.text }>Completed</Text>
+                            </Button>
+                            
+                        </Block>
+                        
+                        <Block style={ styles.card }>
+                            <Block style={{ flex: 1, flexDirection: 'row' }}>
+                                <View style={{ flex: 2, marginRight: 10 }}>
+                                    <Block>
+                                        <Text h5 style={{ marginBottom: 20 }}>Project 3</Text>
+                                        <Text>Task name</Text>
+                                        <Text muted style={ styles.textBackground } >Lorem</Text>
+                                        <Text>Task Details:</Text>
+                                        <Text muted style={ styles.textBackground } >Lor em ip s um Lo r em i ps um L or em ips um Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </Text>
+                                        <Text>Latest Comments </Text>
+                                        <Text muted style={ styles.textBackground } >Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem</Text>
+                                        <Text>Owner / User</Text>
+                                        <Text muted style={ styles.textBackground } >Lorem Ipsum</Text>
+                                    </Block>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <Button round style={ styles.addExpenseBtn }>
+                                        <Text>Add Expense</Text>
+                                    </Button>
+                                    
+                                    <Block style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
+                                        <Block>
+                                            <Text style={{ marginTop: 10 }}>Total Expense</Text>
+                                            <Text h4 style={ styles.expenses }>1000/-</Text>
+                                        </Block>
+                                        <Block>
+                                            <Text>Status</Text>
+                                            <Text style={{ fontSize: 13 }}>Lorem ipsum</Text>
+                                        </Block>
+                                        <Block>
+                                            <Text>Due Date</Text>
+                                            <Text p style={ styles.dates }>03-01-2010</Text>
+                                        </Block>
+                                        <Block>
+                                            <Text>Start Date</Text>
+                                            <Text p style={ styles.dates }>03-01-2010</Text>
+                                        </Block>
+                                        <Block>
+                                            <Text>End Date</Text>
+                                            <Text p style={ styles.dates }>03-01-2010</Text>
+                                        </Block>
+                                    </Block>
+                                </View>
+                            </Block>
+                            <Block style={{ flex:1, flexDirection: 'row', justifyContent: 'space-between', marginTop: -30, marginBottom: -40 }}>
+                                <Button round style={ styles.blockedBtn } onPress={() => this.props.navigation.navigate('ConvertToBlock')}>
+                                    <Text style={{ color: 'rgb(68,125,132)' }}>Block Task</Text>
+                                </Button>
+                                <Button round style={ styles.completedBtn } onPress={() => this.props.navigation.navigate('ConvertToComplete')}>
+                                    <Text style={{ color: 'white' }}>Task Completed</Text>
+                                </Button>
+                            </Block>
                         </Block>
                     </Block>
 
@@ -120,7 +122,8 @@ const styles = StyleSheet.create({
     dates: {
         backgroundColor: 'rgb(213,234,236)', 
         paddingHorizontal: 10,
-        borderRadius: 5
+        borderRadius: 5,
+        fontSize: 14
     },
     expenses: {
         backgroundColor: 'rgb(213,234,236)', 
