@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import AccountantScreen from '../screens/Accountant/AccountantScreen';
 import MyAccountScreen from '../screens/Accountant/MyAccountScreen';
+import ProjectsScreen from '../screens/Accountant/ProjectsScreen';
 import SignInScreen from '../screens/Login/SignInScreen';
 
 import {
@@ -48,10 +49,8 @@ const Drawer = createDrawerNavigator();
 function MyDrawer() {
   return (
     <Drawer.Navigator>
-      
-      <Drawer.Screen name="My Account" component={MyAccountScreen} />
       <Drawer.Screen name="Home" component={AccountantScreen} />
-      
+      <Drawer.Screen name="My Account" component={MyAccountScreen} />
     </Drawer.Navigator>
   );
 }
