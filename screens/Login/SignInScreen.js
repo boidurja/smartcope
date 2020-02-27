@@ -49,7 +49,6 @@ class SignIn extends Component {
                         <Button round color="info" style={ styles.btn } onPress={ this.signIn.bind(this) }>
                             Sign in
                         </Button>
-                        {/*<Button round color="info" style={ styles.btn } onPress={() => this.props.navigation.navigate('ChooseUser')}>Sign in</Button>*/}
                         <Text style={ styles.signUpText }>Don't have an account? Sign up</Text>
                     </Block>
                 </Block>

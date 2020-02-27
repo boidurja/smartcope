@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Text, Block } from 'galio-framework';
 import { StyleSheet } from 'react-native';
+import Header from '../../common/Header';
 
 class MyAccount extends Component {
     render() {
         return (
-            <Block>
+            <Block style={ styles.blockStyle }>
+                <Header title="My Account" />
                 <Text>My Account Screen</Text>
             </Block>
 
@@ -18,7 +20,10 @@ class MyAccount extends Component {
 }
 
 const styles = StyleSheet.create({
-
+    blockStyle: {
+        flex: 1,
+        paddingHorizontal: 10
+    }
 })
 
 export default MyAccount;

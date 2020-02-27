@@ -11,7 +11,7 @@ import SignInScreen from './screens/Login/SignInScreen';
 import ForgotPasswordScreen from './screens/Login/ForgotPasswordScreen';
 import ChooseUserScreen from './screens/Login/ChooseUserScreen';
 
-import AccountantHome from './screens/Accountant/AccountantHome';
+import AccountantDrawerScreen from './screens/Accountant/AccountantDrawerScreen';
 import AccountantScreen from './screens/Accountant/AccountantScreen';
 import ProjectsScreen from './screens/Accountant/ProjectsScreen';
 import TasksScreen from './screens/Accountant/TasksScreen';
@@ -48,8 +48,8 @@ const FirstNavGroup = createSwitchNavigator({
     screen: ChooseUserScreen
   },
 
-  AccountantHome: {
-    screen: AccountantHome
+  AccountantDrawer: {
+    screen: AccountantDrawerScreen
   },
   Accountant: {
     screen: AccountantScreen

@@ -7,7 +7,7 @@ class ChooseUser extends Component {
     return (
         <Block style={ styles.parentBlockStyle }>
             <Block style={ styles.childBlockStyle }>
-                <Button round style={ styles.btn } onPress={() => this.props.navigation.navigate('Accountant')}>
+                <Button round style={ styles.btn } onPress={() => this.props.navigation.navigate('AccountantDrawer')}>
                     <Text style={ styles.txtColor }>
                         Accountant
                     </Text>
