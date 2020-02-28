@@ -20,6 +20,11 @@ class ForgotPassword extends Component {
             this.setState({ helpEmail: true})
             return false
         }
+        let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
+        if (reg.test(this.state.email) === false) {
+            this.setState({ helpEmail: true })
+            return false
+        }
         this.setModalVisible(true);
     }
 
@@ -42,7 +47,7 @@ class ForgotPassword extends Component {
                         style={ styles.email } 
                         placeholder="Email" 
                         rounded 
-                        help="Email is required" 
+                        help="Email is Not Given or Email is Not Correct" 
                         topHelp={false} 
                         bottomHelp={this.state.helpEmail}
                         onChangeText={(text) => this.onChangeText(text)}

@@ -51,6 +51,11 @@ class SignIn extends Component {
         } else {
             this.setState({ helpPass: false })
         }
+        let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
+        if (reg.test(this.state.email) === false) {
+            this.setState({ helpEmail: true })
+            return false
+        }
         this.props.navigation.navigate('ChooseUser');
     }
     
@@ -65,7 +70,7 @@ class SignIn extends Component {
                     <Block style={{ paddingHorizontal: 20, position:'relative', bottom: this.state.bottom }}>                        
                             <Input 
                                 placeholder="Email" 
-                                help="Email is required" 
+                                help="Email is Not Given or Email is Not Correct" 
                                 topHelp={false} 
                                 bottomHelp={this.state.helpEmail} 
                                 rounded 
