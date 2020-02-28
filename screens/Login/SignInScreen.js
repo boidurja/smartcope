@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button } from 'galio-framework';
-import { StyleSheet, TouchableOpacity } from 'react-native';
-import { Redirect, Router } from 'react-router-dom';
+import { Keyboard, ScrollView, StyleSheet, KeyboardAvoidingView, SafeAreaView, TouchableWithoutFeedback  } from 'react-native';
+//import { Redirect, Router } from 'react-router-dom';
 
 class SignIn extends Component {
     state = {  
         email: '',
         pass: '',
         helpEmail: false,
-        helpPass: false
+        helpPass: false,
+        bottom: 0
     }
+
+    onFocus() {
+        this.setState({
+            bottom: 200
+        })
+    }
+
+    onBlur() {
+        this.setState({
+            bottom: 0
+        })
+    }
+
     signIn() {
         /*if ( (this.state.email != "") && (this.state.pass != "")) {
             this.props.navigation.navigate('ChooseUser');
@@ -40,16 +54,38 @@ class SignIn extends Component {
                     <Text muted style={ styles.login }>Smartcope login screen</Text>
                 </Block>
                 <Block style={ styles.blockStyle }>
-                    <Block style={ styles.formStyle }>
-                        <Input placeholder="Email" help="Email is required" topHelp={false} bottomHelp={this.state.helpEmail} rounded onChangeText={(text) => this.setState({email: text})}/>
-                        <Input placeholder="password" help="Password is required" topHelp={false} bottomHelp={this.state.helpPass} password viewPass rounded onChangeText={(text) => this.setState({pass: text})} />
-                        <Block style={ styles.forgotPassword }>
-                            <Text onPress={() => this.props.navigation.navigate('ForgotPassword')}>Forgot your password?</Text>
-                        </Block>
-                        <Button round color="info" style={ styles.btn } onPress={ this.signIn.bind(this) }>
-                            Sign in
-                        </Button>
-                        <Text style={ styles.signUpText }>Don't have an account? Sign up</Text>
+                    <Block style={{ paddingHorizontal: 20, position:'relative', bottom: this.state.bottom }}>                        
+                            <Input 
+                                placeholder="Email" 
+                                help="Email is required" 
+                                topHelp={false} 
+                                bottomHelp={this.state.helpEmail} 
+                                rounded 
+                                onChangeText={(text) => this.setState({email: text})}
+                                onFocus={ () => this.onFocus() }
+                                onBlur={ () => this.onBlur() }
+                            />
+                            <Input 
+                                placeholder="password" 
+                                help="Password is required" 
+                                topHelp={false} 
+                                bottomHelp={this.state.helpPass} 
+                                password 
+                                viewPass 
+                                rounded 
+                                onChangeText={(text) => this.setState({pass: text})} 
+                                onFocus={ () => this.onFocus() }
+                                onBlur={ () => this.onBlur() }
+                            />
+                        
+                        
+                            <Block style={ styles.forgotPassword }>
+                                <Text onPress={() => this.props.navigation.navigate('ForgotPassword')}>Forgot your password?</Text>
+                            </Block>
+                            <Button round color="info" style={ styles.btn } onPress={ this.signIn.bind(this) }>
+                                Sign in
+                            </Button>
+                            <Text style={ styles.signUpText }>Don't have an account? Sign up</Text>
                     </Block>
                 </Block>
             </Block>
@@ -69,9 +105,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 20
     },
-    formStyle: {
-        paddingHorizontal: 20
-    },
+    /*formStyle: {
+        paddingHorizontal: 20,
+        paddingBottom: this.state.paddingBottom
+    },*/
     forgotPassword: {
         flexDirection: 'row-reverse',
     },

@@ -49,8 +49,9 @@ const Drawer = createDrawerNavigator();
 function MyDrawer() {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={AccountantScreen} />
+      
       <Drawer.Screen name="My Account" component={MyAccountScreen} />
+      <Drawer.Screen name="Home" component={AccountantScreen} />
     </Drawer.Navigator>
   );
 }
