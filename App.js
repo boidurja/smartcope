@@ -35,7 +35,7 @@ import TasksCompletedScreen from './screens/Admin/TasksCompletedScreen';
 import ConvertToBlockScreen from './screens/Admin/ConvertToBlockScreen';
 
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
-
+import { createStackNavigator } from 'react-navigation-stack';
 
 const FirstNavGroup = createSwitchNavigator({
   SignIn: {

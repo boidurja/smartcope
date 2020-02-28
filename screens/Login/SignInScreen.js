@@ -24,13 +24,21 @@ class SignIn extends Component {
         })
     }
 
+    onChangeEmail(text) {
+        this.setState({email: text})
+        if (this.state.email != "") {
+            this.setState({ helpEmail: false })
+        }
+    }
+
+    onChangePass(text) {
+        this.setState({pass: text})
+        if (this.state.pass != "") {
+            this.setState({ helpPass: false })
+        }
+    }
+
     signIn() {
-        /*if ( (this.state.email != "") && (this.state.pass != "")) {
-            this.props.navigation.navigate('ChooseUser');
-        } else {
-            this.setState({ helpEmail: true })
-            this.setState({ helpPass: true })
-        }*/
         if (this.state.email == "") {
             this.setState({ helpEmail: true })
             return false
@@ -61,7 +69,7 @@ class SignIn extends Component {
                                 topHelp={false} 
                                 bottomHelp={this.state.helpEmail} 
                                 rounded 
-                                onChangeText={(text) => this.setState({email: text})}
+                                onChangeText={(text) => this.onChangeEmail(text)}
                                 onFocus={ () => this.onFocus() }
                                 onBlur={ () => this.onBlur() }
                             />
@@ -73,7 +81,7 @@ class SignIn extends Component {
                                 password 
                                 viewPass 
                                 rounded 
-                                onChangeText={(text) => this.setState({pass: text})} 
+                                onChangeText={(text) => this.onChangePass(text)} 
                                 onFocus={ () => this.onFocus() }
                                 onBlur={ () => this.onBlur() }
                             />
