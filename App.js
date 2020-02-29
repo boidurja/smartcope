@@ -34,10 +34,53 @@ import TasksBlockedScreen from './screens/Admin/TasksBlockedScreen';
 import TasksCompletedScreen from './screens/Admin/TasksCompletedScreen';
 import ConvertToBlockScreen from './screens/Admin/ConvertToBlockScreen';
 
-import { createSwitchNavigator, createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
+//import { createSwitchNavigator, createAppContainer } from 'react-navigation';
+//import { createStackNavigator } from 'react-navigation-stack';
 
-const FirstNavGroup = createSwitchNavigator({
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="SignIn" component={SignInScreen} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+        <Stack.Screen name="ChooseUser" component={ChooseUserScreen} />
+
+        <Stack.Screen name="AccountantDrawer" component={AccountantDrawerScreen} />
+        <Stack.Screen name="Accountant" component={AccountantScreen} />
+        <Stack.Screen name="Projects" component={ProjectsScreen} />
+        <Stack.Screen name="Tasks" component={TasksScreen} />
+
+        <Stack.Screen name="SuperAdmin" component={SuperAdminScreen} />
+        <Stack.Screen name="AddNewOrganization" component={AddNewOrganizationScreen} />
+        <Stack.Screen name="OrganizationMembers" component={OrganizationMembersScreen} />
+        <Stack.Screen name="AddNewUser" component={AddNewUserScreen} />
+        <Stack.Screen name="EditNewUser" component={EditNewUserScreen} />
+
+        <Stack.Screen name="Admin" component={AdminScreen} />
+        <Stack.Screen name="AddNewProject" component={AddNewProjectScreen} />
+        <Stack.Screen name="ProjectTasks" component={ProjectTasksScreen} />
+        <Stack.Screen name="AddNewTask" component={AddNewTaskScreen} />
+        <Stack.Screen name="EditTask" component={EditTaskScreen} />
+        <Stack.Screen name="TasksOpen" component={TasksOpenScreen} />
+        <Stack.Screen name="TasksInProgress" component={TasksInProgressScreen} />
+        <Stack.Screen name="ConvertToComplete" component={ConvertToCompleteScreen} />
+        <Stack.Screen name="TasksBlocked" component={TasksBlockedScreen} />
+        <Stack.Screen name="TasksCompleted" component={TasksCompletedScreen} />
+        <Stack.Screen name="ConvertToBlock" component={ConvertToBlockScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
+
+
+/*const FirstNavGroup = createSwitchNavigator({
   SignIn: {
     screen: SignInScreen
   },
@@ -110,7 +153,7 @@ const FirstNavGroup = createSwitchNavigator({
   ConvertToBlock: {
     screen: ConvertToBlockScreen
   }
-})
+})*/
 
 /*export default function App(props) {
 
@@ -174,4 +217,4 @@ const styles = StyleSheet.create({
   },
 });*/
 
-export default createAppContainer(FirstNavGroup)
+/*export default createAppContainer(FirstNavGroup)*/

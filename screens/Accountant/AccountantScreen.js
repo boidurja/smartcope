@@ -1,31 +1,40 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, View } from 'react-native';
 import Header from '../../common/Header';
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
-//import DrawerLeft from '../../common/DrawerLeft';
 
 class Accountant extends Component {
+
+    state = {
+        projectNames: ['Project 1', 'Project 2', 'Project 3']
+    }
+
     render() {
     return (
         <Block style={ styles.blockStyle }>
             <Header title="Accounts" />
-            {/*<DrawerLeft />*/}
             <ScrollView>
-                <Card borderless shadow style={ styles.cardStyle } >
-                    <Block style={ styles.spaceBetween}>
-                        <Block>
-                            <Text h5 style={ styles.textStyle }>Project 1</Text>
-                            <Text muted>3 accounted tasks</Text>
-                        </Block>
-                        <Block>
-                            <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Projects')}>
-                                
-                            </Button>
-                            {/*<Ionicons name="ios-arrow-forward" size={32} style={ styles.iconStyle} onPress={() => this.props.navigation.navigate('Projects')}/>*/}
-                        </Block>
-                    </Block>
-                </Card>
+                { this.state.projectNames.map((item, index) => { 
+                    return (
+                        <Card borderless shadow style={ styles.cardStyle } >
+                            <Block style={ styles.spaceBetween}>
+                                <Block>
+                                    <Text h5 style={ styles.textStyle }>
+                                        {item}
+                                    </Text>
+                                    <Text muted>3 accounted tasks</Text>
+                                </Block>
+                                <Block>
+                                    <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Projects')}>
+                                        
+                                    </Button>
+                                </Block>
+                            </Block>
+                        </Card>
+                    )
+                }
+                )}
             </ScrollView>
         </Block>
     );

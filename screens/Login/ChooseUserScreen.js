@@ -7,7 +7,7 @@ class ChooseUser extends Component {
     return (
         <Block style={ styles.parentBlockStyle }>
             <Block style={ styles.childBlockStyle }>
-                <Button round style={ styles.btn } onPress={() => this.props.navigation.navigate('AccountantDrawer')}>
+                <Button round style={ styles.btn } onPress={() => this.props.navigation.navigate('Accountant')}>
                     <Text style={ styles.txtColor }>
                         Accountant
                     </Text>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     parentBlockStyle: {
         flex: 1,
         backgroundColor: 'rgb(77,176,188)',
-        paddingVertical: 150
+        paddingVertical: 120
     },
     childBlockStyle: {
         flex: 1,
