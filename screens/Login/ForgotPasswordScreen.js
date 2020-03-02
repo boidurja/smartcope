@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet, Modal, TouchableHighlight, Image, KeyboardAvoidingView } from 'react-native'; 
+import { StyleSheet, Modal, TouchableHighlight, Image, KeyboardAvoidingView, TouchableOpacity } from 'react-native'; 
+import Colors from '../../constants/Colors';
 
 class ForgotPassword extends Component {
 
@@ -53,8 +54,8 @@ class ForgotPassword extends Component {
                             onChangeText={(text) => this.onChangeText(text)}
                         />
                         <Block style={ styles.btnGroup }>
-                            <Button color="info" round style={ styles.btn } onPress={() => this.props.navigation.navigate('SignIn')}>Cancel</Button>
-                            <Button color="black" round style={ styles.btn } onPress={() => this.submit() } >Submit</Button>
+                            <Button round style={ styles.cancelBtn } onPress={() => this.props.navigation.navigate('SignIn')}>Cancel</Button>
+                            <Button round style={ styles.submitBtn } onPress={() => this.submit() } >Submit</Button>
                         </Block>
                         <Text 
                             style={ styles.resend }
@@ -63,7 +64,7 @@ class ForgotPassword extends Component {
                             }}>
                             Email not received? Resend link
                         </Text>
-                        <Button round color="info" style={ styles.signInBtn } onPress={() => this.props.navigation.navigate('SignIn')}>Sign in</Button>
+                        <Button round style={ styles.signInBtn } onPress={() => this.props.navigation.navigate('SignIn')}>Sign in</Button>
                     </Block>
                 </KeyboardAvoidingView>
                 <Modal
@@ -72,14 +73,13 @@ class ForgotPassword extends Component {
                     visible={this.state.modalVisible}
                 >
                     <Block style={ styles.myModal }>
+                        <TouchableOpacity onPress={() => { this.setModalVisible(false); }}>
                         <Card style={ styles.myCard }>
                             <Image style={ styles.imgStyle } source={require('../../assets/images/sent.png')} />
                             <Text muted style={ styles.textStyle}>Email has been sent with</Text>
                             <Text muted style={ styles.textStyle}>Password reset link</Text>
-                            <TouchableHighlight>
-                                <Button round color="info" style={ styles.btnDismiss } onPress={() => { this.setModalVisible(false); }}>Dismiss</Button>
-                            </TouchableHighlight>
                         </Card>
+                        </TouchableOpacity>
                     </Block>
                 </Modal>
             </Block>
@@ -101,8 +101,13 @@ const styles = StyleSheet.create({
         marginTop: 100,
         textAlign: 'center'
     },
-    btn: {
-        width: '48%'
+    cancelBtn: {
+        width: '48%',
+        backgroundColor: Colors.blueBtn
+    },
+    submitBtn: {
+        width: '48%',
+        backgroundColor: Colors.blackBtn
     },
     btnGroup: {
         flexDirection: 'row',
@@ -115,7 +120,8 @@ const styles = StyleSheet.create({
     },
     signInBtn: {
         marginTop: 60,
-        marginBottom: 50
+        marginBottom: 50,
+        backgroundColor: Colors.blueBtn
     },
     myModal: {
         marginTop: 200,
@@ -135,7 +141,8 @@ const styles = StyleSheet.create({
         marginTop: 10,
         width: 90,
         marginLeft: 'auto',
-        marginRight: 'auto'
+        marginRight: 'auto',
+        backgroundColor: Colors.blueBtn
     }
 })
 

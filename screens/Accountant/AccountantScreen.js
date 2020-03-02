@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, Block, Input, Button, Card } from 'galio-framework';
 import { StyleSheet, ScrollView, View } from 'react-native';
 import Header from '../../common/Header';
+//import DrawerLeft from '../../common/DrawerLeft';
 
 class Accountant extends Component {
 
@@ -13,6 +14,7 @@ class Accountant extends Component {
     return (
         <Block style={ styles.blockStyle }>
             <Header title="Accounts" />
+            {/*<DrawerLeft />*/}
             <ScrollView>
                 { this.state.projectNames.map((item, index) => { 
                     return (

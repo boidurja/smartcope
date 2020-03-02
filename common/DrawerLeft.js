@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import AccountantScreen from '../screens/Accountant/AccountantScreen';
@@ -7,14 +6,7 @@ import MyAccountScreen from '../screens/Accountant/MyAccountScreen';
 import ProjectsScreen from '../screens/Accountant/ProjectsScreen';
 import SignInScreen from '../screens/Login/SignInScreen';
 
-import {
-  SafeAreaProvider, SafeAreaContext
-} from 'react-native-safe-area-context';
-import {
-  DrawerContentScrollView,
-  DrawerItemList,
-  DrawerItem,
-} from '@react-navigation/drawer';
+
 
 /*function CustomDrawerContent(props) {
   return (
@@ -65,6 +57,17 @@ export default function DrawerLeft() {
     
   );
 }
+
+/*export default function DrawerLeft() {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={AccountantScreen} />
+        <Drawer.Screen name="My Account" component={MyAccountScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
+}*/
 
 /*const Drawer = createDrawerNavigator();
 

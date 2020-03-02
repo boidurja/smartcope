@@ -71,6 +71,9 @@ class OrganizationMembers extends Component {
                             </Block>
                         </Block>
                     </Card>
+                    <Button round color="info" style={ styles.btnProjects } onPress={() => this.props.navigation.navigate('Admin') }>
+                        Projects
+                    </Button>
                 </Card>
             </ScrollView>
         </Block>
@@ -147,6 +150,12 @@ const styles = StyleSheet.create({
     },
     center: {
         marginLeft: 10
+    },
+    btnProjects: {
+        marginTop: 20,
+        width: '100%',
+        marginLeft: 'auto',
+        marginRight: 'auto'
     }
 });
 

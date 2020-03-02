@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, Block, Button, Card } from 'galio-framework';
 import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import Header from '../../common/Header';
+import Colors from '../../constants/Colors';
 
 class SuperAdmin extends Component {
     render() {
@@ -64,20 +65,20 @@ const styles = StyleSheet.create({
         marginTop: -30
     },
     btnOn: {
-        backgroundColor: 'green',
+        backgroundColor: Colors.onlineBtn,
         width: 80,
         marginTop: -25,
         height: 35
     },
     btnOff: {
-        backgroundColor: 'red',
+        backgroundColor: Colors.offlineBtn,
         width: 80,
         marginTop: -25,
         height: 35
     },
     addBtn: {
         marginTop: 30,
-        backgroundColor: 'blue',
+        backgroundColor: Colors.addBtn,
         width: 180,
         marginLeft: 'auto',
         marginRight: 'auto'

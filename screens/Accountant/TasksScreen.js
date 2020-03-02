@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Text, Block, Input, Button, Card } from 'galio-framework';
+import { Text, Block, Card } from 'galio-framework';
 import { StyleSheet, Image, ScrollView } from 'react-native';
 import Header from '../../common/Header';
+import Colors from '../../constants/Colors';
 
 class Tasks extends Component {
     render() {
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
     priceBreakup: {
         padding: 10,
         marginHorizontal: -15,
-        backgroundColor: 'rgb(230,239,243)',
+        backgroundColor: Colors.accountantCard,
         borderBottomWidth: 1,
         borderBottomColor: 'grey'
     },

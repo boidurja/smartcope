@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button } from 'galio-framework';
 import { StyleSheet, KeyboardAvoidingView, SafeAreaView } from 'react-native';
+import Colors from '../../constants/Colors';
 
 class SignIn extends Component {
     state = {  
@@ -78,7 +79,7 @@ class SignIn extends Component {
                                     <Block style={ styles.forgotPassword }>
                                         <Text onPress={() => this.props.navigation.navigate('ForgotPassword')}>Forgot your password?</Text>
                                     </Block>
-                                    <Button round color="info" style={ styles.btn } onPress={() => this.signIn() }>
+                                    <Button round style={ styles.signinBtn } onPress={() => this.signIn() }>
                                         Sign in
                                     </Button>
                                     <Text style={ styles.signUpText }>Don't have an account? Sign up</Text>
@@ -103,15 +104,12 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 20
     },
-    /*formStyle: {
-        paddingHorizontal: 20,
-        paddingBottom: this.state.paddingBottom
-    },*/
     forgotPassword: {
         flexDirection: 'row-reverse',
     },
-    btn: {
-        marginTop: 20
+    signinBtn: {
+        marginTop: 20,
+        backgroundColor: Colors.signInBtn
     },
     signUpText: {
         textAlign: "center",
