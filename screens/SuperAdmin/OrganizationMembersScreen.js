@@ -1,9 +1,29 @@
 import React, { Component } from 'react';
 import { Text, Block, Button, Card } from 'galio-framework';
-import { StyleSheet, Image, ScrollView } from 'react-native';
+import { StyleSheet, Image, ScrollView, Modal } from 'react-native';
 import Header from '../../common/Header';
+import Colors from '../../constants/Colors';
 
 class OrganizationMembers extends Component {
+    state = {
+        modalVisible: false,
+    };
+
+    setModalVisible(visible) {
+        this.setState({modalVisible: visible});
+    }
+
+    cancel() {
+        //console.log('cancel')
+        this.setModalVisible(false)
+    }
+
+    submit() {
+        //console.log('submit')
+        this.setModalVisible(false)
+        this.props.navigation.navigate('SuperAdmin')
+    }
+
     render() {
     return (
         <Block style={ styles.blockStyle }>
@@ -23,11 +43,41 @@ class OrganizationMembers extends Component {
                                     Add User
                                 </Text>
                             </Button>
-                            <Button round style={ styles.deleteBtn } onPress={() => this.props.navigation.navigate('EditNewUser')}>
+                            <Button round style={ styles.deleteBtn } onPress={() => { this.setModalVisible(true);}}>
                                 <Text style={{ fontSize: 12, color: 'white' }}>
                                     Delete
                                 </Text>
                             </Button>
+                            <Modal
+                                animationType="slide"
+                                transparent={false}
+                                visible={this.state.modalVisible}
+                            >
+                                <Block style={ styles.myModal }>
+                                    <Card style={ styles.myCard }>
+                                        <Text style={ styles.modalTextStyle}>
+                                            Do you want to delete this organization ?
+                                        </Text>
+                                        <Block style={ styles.btnGroup }>
+                                            <Button 
+                                                round 
+                                                style={ styles.cancelBtn } 
+                                                onPress={() => this.cancel() }
+                                            >
+                                                Cancel
+                                            </Button>
+                                            <Button 
+                                                round 
+                                                style={ styles.submitBtn } 
+                                                onPress={() => this.submit() }
+                                            >
+                                                Submit
+                                            </Button>
+                                        </Block>
+                                    </Card>
+                                    
+                                </Block>
+                            </Modal>
                         </Block>
                     </Block>
                     <Block style={ styles.contactInfo}>
@@ -156,6 +206,30 @@ const styles = StyleSheet.create({
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto'
+    },
+    myModal: {
+        marginTop: 200,
+        padding: 20
+    },
+    myCard: {
+        padding: 20
+    },
+    modalTextStyle: {
+        marginTop: -30,
+        fontSize: 30
+    },
+    btnGroup: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 20
+    },
+    cancelBtn: {
+        width: '48%',
+        backgroundColor: Colors.cancelBtn
+    },
+    submitBtn: {
+        width: '48%',
+        backgroundColor: Colors.submitBtn
     }
 });
 

@@ -136,13 +136,6 @@ const styles = StyleSheet.create({
     imgStyle: {
         marginLeft: 'auto',
         marginRight: 'auto'
-    },
-    btnDismiss: {
-        marginTop: 10,
-        width: 90,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        backgroundColor: Colors.blueBtn
     }
 })
 

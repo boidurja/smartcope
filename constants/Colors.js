@@ -21,5 +21,6 @@ export default {
   offlineBtn: 'red',
   accountantCard: 'rgb(230,239,243)',
   addBtn: 'blue',
+  cancelBtn: 'red',
   submitBtn: 'blue'
 };

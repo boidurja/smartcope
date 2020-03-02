@@ -40,7 +40,8 @@ class AddNewOrganization extends Component {
                     customStyles={{
                         dateInput: {  
                             borderRadius: 30,
-                            marginTop: 15
+                            marginTop: 15,
+                            backgroundColor: 'white'
                         },
                         placeholderText: {
                             marginLeft: -190
