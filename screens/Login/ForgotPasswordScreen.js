@@ -103,11 +103,11 @@ const styles = StyleSheet.create({
     },
     cancelBtn: {
         width: '48%',
-        backgroundColor: Colors.blueBtn
+        backgroundColor: Colors.cancelBtnForgotPassword
     },
     submitBtn: {
         width: '48%',
-        backgroundColor: Colors.blackBtn
+        backgroundColor: Colors.submitBtnForgotPassword
     },
     btnGroup: {
         flexDirection: 'row',
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     signInBtn: {
         marginTop: 60,
         marginBottom: 50,
-        backgroundColor: Colors.blueBtn
+        backgroundColor: Colors.signInBtn
     },
     myModal: {
         marginTop: 200,

@@ -13,9 +13,11 @@ export default {
   noticeText: '#fff',
   cardBackground: 'rgb(190,222,226)',
   signInBtn: 'blue',
-  blackBtn: 'black',
+  cancelBtnForgotPassword: 'blue',
+  submitBtnForgotPassword: 'black',
   onlineBtn: 'green',
   offlineBtn: 'red',
   accountantCard: 'rgb(230,239,243)',
-  addBtn: 'blue'
+  addBtn: 'blue',
+  submitBtn: 'blue'
 };

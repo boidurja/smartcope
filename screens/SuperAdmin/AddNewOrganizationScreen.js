@@ -3,6 +3,7 @@ import { Text, Block, Input, Button } from 'galio-framework';
 import { StyleSheet } from 'react-native';
 import Header from '../../common/Header';
 import DatePicker from 'react-native-datepicker';
+import Colors from '../../constants/Colors';
 
 class AddNewOrganization extends Component {
     constructor(props){
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     submitBtn: {
-        backgroundColor: 'blue',
+        backgroundColor: Colors.submitBtn,
         width: '50%',
         marginVertical: 50,
         marginLeft: 'auto',

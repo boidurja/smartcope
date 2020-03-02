@@ -11,34 +11,34 @@ class Accountant extends Component {
     }
 
     render() {
-    return (
-        <Block style={ styles.blockStyle }>
-            <Header title="Accounts" />
-            {/*<DrawerLeft />*/}
-            <ScrollView>
-                { this.state.projectNames.map((item, index) => { 
-                    return (
-                        <Card borderless shadow style={ styles.cardStyle } >
-                            <Block style={ styles.spaceBetween}>
-                                <Block>
-                                    <Text h5 style={ styles.textStyle }>
-                                        {item}
-                                    </Text>
-                                    <Text muted>3 accounted tasks</Text>
+        return (
+            <Block style={ styles.blockStyle }>
+                <Header title="Accounts" />
+                {/*<DrawerLeft />*/}
+                <ScrollView>
+                    { this.state.projectNames.map((item, index) => { 
+                        return (
+                            <Card borderless shadow style={ styles.cardStyle } >
+                                <Block style={ styles.spaceBetween}>
+                                    <Block>
+                                        <Text h5 style={ styles.textStyle }>
+                                            {item}
+                                        </Text>
+                                        <Text muted>3 accounted tasks</Text>
+                                    </Block>
+                                    <Block>
+                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Projects')}>
+                                            
+                                        </Button>
+                                    </Block>
                                 </Block>
-                                <Block>
-                                    <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Projects')}>
-                                        
-                                    </Button>
-                                </Block>
-                            </Block>
-                        </Card>
-                    )
-                }
-                )}
-            </ScrollView>
-        </Block>
-    );
+                            </Card>
+                        )
+                    }
+                    )}
+                </ScrollView>
+            </Block>
+        );
     }
 }
 
