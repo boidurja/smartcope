@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { Text, Block, Input, Button, Card } from 'galio-framework';
 import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
 import Header from '../../common/Header';
-//import DrawerLeft from '../../common/DrawerLeft';
 
 class ProjectTasks extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
                 <Header title="" />
-                {/*<DrawerLeft />*/}
+                
                 <ScrollView>
                     <Block style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                         <Text h4>Project 1</Text>

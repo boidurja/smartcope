@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet, TextInput, ScrollView } from 'react-native';
+import { Text, Block, Input, Button } from 'galio-framework';
+import { StyleSheet, ScrollView } from 'react-native';
 import Header from '../../common/Header';
 import DatePicker from 'react-native-datepicker';
-//import DrawerLeft from '../../common/DrawerLeft';
 
 class EditTask extends Component {
     constructor(props){
@@ -30,7 +29,7 @@ class EditTask extends Component {
         return (
             <Block style={ styles.blockStyle }>
                 <Header title="" />
-                {/*<DrawerLeft />*/}
+    
                 <ScrollView>
                     <Text h4>
                         Edit Task
@@ -119,9 +118,6 @@ class EditTask extends Component {
                         }}
                         onDateChange={ this.handleDueDateChange.bind(this) }
                     />
-                    {/*<Input style={ styles.input } placeholder="Select Start Date here" label="Start Date" />
-                    <Input style={ styles.input } placeholder="Select End Date here" label="End Date" />
-                    <Input style={ styles.input } placeholder="Select Due Date here" label="Due Date" />*/}
                     
                     <Block style={{ flex: 1, flexDirection: 'row', alignItems: 'flex-start', marginTop: 20 }}>
                         <Input style={ styles.attachments } placeholder="" label="Attachments" />

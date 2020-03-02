@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, Block, Button } from 'galio-framework';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import Header from '../../common/Header';
 import { Dimensions } from 'react-native';
 

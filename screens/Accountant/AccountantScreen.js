@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, Block, Input, Button, Card } from 'galio-framework';
 import { StyleSheet, ScrollView, View } from 'react-native';
 import Header from '../../common/Header';
-import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 
 class Accountant extends Component {
 

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet, Modal, TouchableHighlight, Image, KeyboardAvoidingView, SafeAreaView } from 'react-native'; 
-import { AuthSession } from 'expo';
+import { StyleSheet, Modal, TouchableHighlight, Image, KeyboardAvoidingView } from 'react-native'; 
 
 class ForgotPassword extends Component {
 
@@ -39,13 +38,11 @@ class ForgotPassword extends Component {
         return (
             <Block style={ styles.blockStyle }>
                 <KeyboardAvoidingView style={{flex: 1}} behavior="padding" enabled keyboardVerticalOffset="10">
-                <Block style={{ flex: 1}}>
-                    <Text muted style={ styles.enterEmail }>Please enter your email address</Text>
-                </Block>
-                
-                <Block style={ styles.formStyle }>
+                    <Block style={{ flex: 1}}>
+                        <Text muted style={ styles.enterEmail }>Please enter your email address</Text>
+                    </Block>
                     
-                        
+                    <Block style={ styles.formStyle }>    
                         <Input 
                             style={ styles.email } 
                             placeholder="Email" 
@@ -59,8 +56,6 @@ class ForgotPassword extends Component {
                             <Button color="info" round style={ styles.btn } onPress={() => this.props.navigation.navigate('SignIn')}>Cancel</Button>
                             <Button color="black" round style={ styles.btn } onPress={() => this.submit() } >Submit</Button>
                         </Block>
-                        
-                    
                         <Text 
                             style={ styles.resend }
                             onPress={() => {
@@ -69,8 +64,7 @@ class ForgotPassword extends Component {
                             Email not received? Resend link
                         </Text>
                         <Button round color="info" style={ styles.signInBtn } onPress={() => this.props.navigation.navigate('SignIn')}>Sign in</Button>
-                    
-                </Block>
+                    </Block>
                 </KeyboardAvoidingView>
                 <Modal
                     animationType="slide"

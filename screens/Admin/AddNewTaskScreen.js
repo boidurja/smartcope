@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet, TextInput } from 'react-native';
+import { Text, Block, Input, Button } from 'galio-framework';
+import { StyleSheet } from 'react-native';
 import Header from '../../common/Header';
-//import DrawerLeft from '../../common/DrawerLeft';
 
 class AddNewTask extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
                 <Header title="" />
-                {/*<DrawerLeft />*/}
+
                 <Text h4>
                     Add New Task
                 </Text>

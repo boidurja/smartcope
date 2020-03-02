@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-import { Text, Block, Input, Button, Card } from 'galio-framework';
+import { Text, Block, Button, Card } from 'galio-framework';
 import { StyleSheet, Image, ScrollView } from 'react-native';
 import Header from '../../common/Header';
-import { MaterialIcons, Ionicons } from '@expo/vector-icons';
-//import { Drawer } from '../../common/Drawer';
 
 class OrganizationMembers extends Component {
     render() {
     return (
         <Block style={ styles.blockStyle }>
             <Header title="Organizations" />
-            {/*<Drawer />*/}
+            
             <ScrollView>
                 <Card borderless style={ styles.cardStyle }>
                     <Block style={ styles.spaceBetween}>

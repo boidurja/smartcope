@@ -10,10 +10,6 @@ class MyAccount extends Component {
                 <Header title="My Account" />
                 <Text>My Account Screen</Text>
             </Block>
-
-
-
-
         );
     }
 
