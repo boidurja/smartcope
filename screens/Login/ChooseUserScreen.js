@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, Block, Button } from 'galio-framework';
 import { StyleSheet } from 'react-native';
+import Colors from '../../constants/Colors';
 
 class ChooseUser extends Component {
     render() {
@@ -49,7 +50,6 @@ class ChooseUser extends Component {
 const styles = StyleSheet.create({
     parentBlockStyle: {
         flex: 1,
-        backgroundColor: 'rgb(77,176,188)',
         paddingVertical: 120
     },
     childBlockStyle: {
@@ -61,10 +61,10 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
         padding: 30,
-        backgroundColor: 'rgb(190,248,255)'
+        backgroundColor: Colors.chooseUserBtn
     },
     txtColor: {
-        color: 'rgb(112,112,112)',
+        color: Colors.btnText,
         fontSize: 17
     }
 });

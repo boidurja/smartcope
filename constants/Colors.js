@@ -13,6 +13,8 @@ export default {
   noticeText: '#fff',
   cardBackground: 'rgb(190,222,226)',
   signInBtn: 'blue',
+  chooseUserBtn: 'black',
+  btnText: 'white',
   cancelBtnForgotPassword: 'blue',
   submitBtnForgotPassword: 'black',
   onlineBtn: 'green',
