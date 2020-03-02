@@ -63,6 +63,7 @@ class SignIn extends Component {
         return (
             <Block style={ styles.blockStyle }>
                 <KeyboardAvoidingView style={{flex: 1}} behavior="padding" enabled keyboardVerticalOffset="170">
+                <SafeAreaView style={{flex: 1}}>
                     <Block style={ styles.blockStyle }>
                         <Text p style={ styles.signIn }>Sign In</Text>
                         <Text muted style={ styles.login }>Smartcope login screen</Text>
@@ -71,7 +72,7 @@ class SignIn extends Component {
                         <Block style={{ paddingHorizontal: 20, position:'relative', bottom: this.state.bottom }}>                        
                                 <Input 
                                     placeholder="Email" 
-                                    help="Email is Not Given or Email is Not Correct" 
+                                    help="Email field is empty or Email is Not Correct" 
                                     topHelp={false} 
                                     bottomHelp={this.state.helpEmail} 
                                     rounded 
@@ -91,8 +92,6 @@ class SignIn extends Component {
                                     //onFocus={ () => this.onFocus() }
                                     //onBlur={ () => this.onBlur() }
                                 />
-                            
-                            
                                 <Block style={ styles.forgotPassword }>
                                     <Text onPress={() => this.props.navigation.navigate('ForgotPassword')}>Forgot your password?</Text>
                                 </Block>
@@ -102,6 +101,7 @@ class SignIn extends Component {
                                 <Text style={ styles.signUpText }>Don't have an account? Sign up</Text>
                         </Block>
                     </Block>
+                </SafeAreaView>
                 </KeyboardAvoidingView>
             </Block>
         );

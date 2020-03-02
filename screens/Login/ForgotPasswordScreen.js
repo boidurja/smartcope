@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet, Modal, TouchableHighlight, Image } from 'react-native'; 
+import { StyleSheet, Modal, TouchableHighlight, Image, KeyboardAvoidingView, SafeAreaView } from 'react-native'; 
 import { AuthSession } from 'expo';
 
 class ForgotPassword extends Component {
@@ -37,34 +37,41 @@ class ForgotPassword extends Component {
 
     render() {
         return (
-            <Block>
-                <Block>
+            <Block style={ styles.blockStyle }>
+                <KeyboardAvoidingView style={{flex: 1}} behavior="padding" enabled keyboardVerticalOffset="10">
+                <Block style={{ flex: 1}}>
                     <Text muted style={ styles.enterEmail }>Please enter your email address</Text>
                 </Block>
                 
                 <Block style={ styles.formStyle }>
-                    <Input 
-                        style={ styles.email } 
-                        placeholder="Email" 
-                        rounded 
-                        help="Email is Not Given or Email is Not Correct" 
-                        topHelp={false} 
-                        bottomHelp={this.state.helpEmail}
-                        onChangeText={(text) => this.onChangeText(text)}
-                    />
-                    <Block style={ styles.btnGroup }>
-                        <Button color="info" round style={ styles.btn } onPress={() => this.props.navigation.navigate('SignIn')}>Cancel</Button>
-                        <Button color="black" round style={ styles.btn } onPress={() => this.submit() } >Submit</Button>
-                    </Block>
-                    <Text 
-                        style={ styles.resend }
-                        onPress={() => {
-                            this.setModalVisible(true);
-                        }}>
-                        Email not received? Resend link
-                    </Text>
-                    <Button round color="info" style={ styles.signInBtn } onPress={() => this.props.navigation.navigate('SignIn')}>Sign in</Button>
+                    
+                        
+                        <Input 
+                            style={ styles.email } 
+                            placeholder="Email" 
+                            rounded 
+                            help="Email field is empty or Email is Not Correct" 
+                            topHelp={false} 
+                            bottomHelp={this.state.helpEmail}
+                            onChangeText={(text) => this.onChangeText(text)}
+                        />
+                        <Block style={ styles.btnGroup }>
+                            <Button color="info" round style={ styles.btn } onPress={() => this.props.navigation.navigate('SignIn')}>Cancel</Button>
+                            <Button color="black" round style={ styles.btn } onPress={() => this.submit() } >Submit</Button>
+                        </Block>
+                        
+                    
+                        <Text 
+                            style={ styles.resend }
+                            onPress={() => {
+                                this.setModalVisible(true);
+                            }}>
+                            Email not received? Resend link
+                        </Text>
+                        <Button round color="info" style={ styles.signInBtn } onPress={() => this.props.navigation.navigate('SignIn')}>Sign in</Button>
+                    
                 </Block>
+                </KeyboardAvoidingView>
                 <Modal
                     animationType="slide"
                     transparent={false}
@@ -87,6 +94,9 @@ class ForgotPassword extends Component {
 }
 
 const styles = StyleSheet.create({
+    blockStyle: {
+        flex: 1
+    },
     formStyle: {
         paddingHorizontal: 20
     },
@@ -110,7 +120,8 @@ const styles = StyleSheet.create({
         marginTop: 60
     },
     signInBtn: {
-        marginTop: 70
+        marginTop: 60,
+        marginBottom: 50
     },
     myModal: {
         marginTop: 200,
