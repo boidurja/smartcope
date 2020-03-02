@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button } from 'galio-framework';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Header from '../../common/Header';
 import DatePicker from 'react-native-datepicker';
 

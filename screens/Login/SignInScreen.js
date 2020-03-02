@@ -12,7 +12,7 @@ class SignIn extends Component {
         bottom: 0
     }
 
-    onFocus() {
+    /*onFocus() {
         this.setState({
             bottom: 200
         })
@@ -22,7 +22,7 @@ class SignIn extends Component {
         this.setState({
             bottom: 0
         })
-    }
+    }*/
 
     onChangeEmail(text) {
         this.setState({email: text})
@@ -62,45 +62,47 @@ class SignIn extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
-                <Block style={ styles.blockStyle }>
-                    <Text p style={ styles.signIn }>Sign In</Text>
-                    <Text muted style={ styles.login }>Smartcope login screen</Text>
-                </Block>
-                <Block style={ styles.blockStyle }>
-                    <Block style={{ paddingHorizontal: 20, position:'relative', bottom: this.state.bottom }}>                        
-                            <Input 
-                                placeholder="Email" 
-                                help="Email is Not Given or Email is Not Correct" 
-                                topHelp={false} 
-                                bottomHelp={this.state.helpEmail} 
-                                rounded 
-                                onChangeText={(text) => this.onChangeEmail(text)}
-                                onFocus={ () => this.onFocus() }
-                                onBlur={ () => this.onBlur() }
-                            />
-                            <Input 
-                                placeholder="password" 
-                                help="Password is required" 
-                                topHelp={false} 
-                                bottomHelp={this.state.helpPass} 
-                                password 
-                                viewPass 
-                                rounded 
-                                onChangeText={(text) => this.onChangePass(text)} 
-                                onFocus={ () => this.onFocus() }
-                                onBlur={ () => this.onBlur() }
-                            />
-                        
-                        
-                            <Block style={ styles.forgotPassword }>
-                                <Text onPress={() => this.props.navigation.navigate('ForgotPassword')}>Forgot your password?</Text>
-                            </Block>
-                            <Button round color="info" style={ styles.btn } onPress={ this.signIn.bind(this) }>
-                                Sign in
-                            </Button>
-                            <Text style={ styles.signUpText }>Don't have an account? Sign up</Text>
+                <KeyboardAvoidingView style={{flex: 1}} behavior="padding" enabled keyboardVerticalOffset="170">
+                    <Block style={ styles.blockStyle }>
+                        <Text p style={ styles.signIn }>Sign In</Text>
+                        <Text muted style={ styles.login }>Smartcope login screen</Text>
                     </Block>
-                </Block>
+                    <Block style={ styles.blockStyle }>
+                        <Block style={{ paddingHorizontal: 20, position:'relative', bottom: this.state.bottom }}>                        
+                                <Input 
+                                    placeholder="Email" 
+                                    help="Email is Not Given or Email is Not Correct" 
+                                    topHelp={false} 
+                                    bottomHelp={this.state.helpEmail} 
+                                    rounded 
+                                    onChangeText={(text) => this.onChangeEmail(text)}
+                                    //onFocus={ () => this.onFocus() }
+                                    //onBlur={ () => this.onBlur() }
+                                />
+                                <Input 
+                                    placeholder="password" 
+                                    help="Password is required" 
+                                    topHelp={false} 
+                                    bottomHelp={this.state.helpPass} 
+                                    password 
+                                    viewPass 
+                                    rounded 
+                                    onChangeText={(text) => this.onChangePass(text)} 
+                                    //onFocus={ () => this.onFocus() }
+                                    //onBlur={ () => this.onBlur() }
+                                />
+                            
+                            
+                                <Block style={ styles.forgotPassword }>
+                                    <Text onPress={() => this.props.navigation.navigate('ForgotPassword')}>Forgot your password?</Text>
+                                </Block>
+                                <Button round color="info" style={ styles.btn } onPress={ this.signIn.bind(this) }>
+                                    Sign in
+                                </Button>
+                                <Text style={ styles.signUpText }>Don't have an account? Sign up</Text>
+                        </Block>
+                    </Block>
+                </KeyboardAvoidingView>
             </Block>
         );
     }
