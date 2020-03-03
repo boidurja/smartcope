@@ -56,39 +56,40 @@ class SuperAdmin extends Component {
                                             >
                                                 { item.activated ? 'Online' : 'Offline' }
                                             </Button>
+                                            <Modal
+                                                animationType="slide"
+                                                transparent={false}
+                                                visible={this.state.modalVisible}
+                                            >
+                                                <Block style={ styles.myModal }>
+                                                    <Card style={ styles.myCard }>
+                                                        <Text style={ styles.modalTextStyle}>
+                                                            { item.activated ? 'Do you want to make this organization offline ' : 'Do you want to make this organization online ' }
+                                                            ?
+                                                        </Text>
+                                                        <Block style={ styles.btnGroup }>
+                                                            <Button 
+                                                                round 
+                                                                style={ styles.cancelBtn } 
+                                                                onPress={() => this.cancel() }
+                                                            >
+                                                                Cancel
+                                                            </Button>
+                                                            <Button 
+                                                                round 
+                                                                style={ styles.submitBtn } 
+                                                                onPress={() => this.submit() }
+                                                            >
+                                                                Submit
+                                                            </Button>
+                                                        </Block>
+                                                    </Card>
+                                                    
+                                                </Block>
+                                            </Modal>
                                         </Block>
                                     </Block>
-                                    <Modal
-                                        animationType="slide"
-                                        transparent={false}
-                                        visible={this.state.modalVisible}
-                                    >
-                                        <Block style={ styles.myModal }>
-                                            <Card style={ styles.myCard }>
-                                                <Text style={ styles.modalTextStyle}>
-                                                    { item.activated[index] ? 'Do you want to make this organization offline ' : 'Do you want to make this organization online ' }
-                                                    ?
-                                                </Text>
-                                                <Block style={ styles.btnGroup }>
-                                                    <Button 
-                                                        round 
-                                                        style={ styles.cancelBtn } 
-                                                        onPress={() => this.cancel() }
-                                                    >
-                                                        Cancel
-                                                    </Button>
-                                                    <Button 
-                                                        round 
-                                                        style={ styles.submitBtn } 
-                                                        onPress={() => this.submit() }
-                                                    >
-                                                        Submit
-                                                    </Button>
-                                                </Block>
-                                            </Card>
-                                            
-                                        </Block>
-                                    </Modal>
+                                    
                                 </Card>
                             </TouchableOpacity>
                         )

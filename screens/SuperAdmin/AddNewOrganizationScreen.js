@@ -47,7 +47,7 @@ class AddNewOrganization extends Component {
                             marginLeft: -190
                         },
                         dateText: {
-                            marginRight: -200
+                            marginRight: 210
                         }
                     }}
                     onDateChange={ this.handleDateChange.bind(this) }
