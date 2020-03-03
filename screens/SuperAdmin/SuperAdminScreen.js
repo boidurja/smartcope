@@ -31,9 +31,10 @@ class SuperAdmin extends Component {
         this.setModalVisible(false)
     }
 
-    submit() {
+    submit(item) {
         //console.log('submit')
         this.setModalVisible(false)
+        item["activated"] = !item["activated"]
     }
     
     render() {
@@ -80,7 +81,6 @@ class SuperAdmin extends Component {
                     <Block style={ styles.myModal }>
                         <Card style={ styles.myCard }>
                             <Text style={ styles.modalTextStyle}>
-                                
                                 { this.state.selectedItem?.activated ? 'Do you want to make this organization offline ' : 'Do you want to make this organization online ' }
                                 ?
                             </Text>
@@ -95,7 +95,7 @@ class SuperAdmin extends Component {
                                 <Button 
                                     round 
                                     style={ styles.submitBtn } 
-                                    onPress={() => this.submit() }
+                                    onPress={() => this.submit(this.state.selectedItem) }
                                 >
                                     Submit
                                 </Button>
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     },
     cardStyle: {
         padding: 20,
-        marginBottom: 2
+        marginBottom: 5
     },
     textStyle: {
         marginTop: -30,

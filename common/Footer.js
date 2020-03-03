@@ -8,19 +8,19 @@ class Footer extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
-                <Block style={ styles.centering }>
+                <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksOpen')}>
                     <Ionicons name="md-radio-button-off" style={ styles.openIcon }></Ionicons>
-                </Block>
-                <Block style={ styles.centering }>
+                </Button>
+                <Block style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
                     <Ionicons name="md-time" style={ styles.orangeIcon }></Ionicons>
                 </Block>
-                <Block style={ styles.centering }>
+                <Block style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksBlocked')}>
                     <Ionicons name="md-close-circle" style={ styles.redIcon }></Ionicons>
                 </Block>
-                <Block style={ styles.centering }>
+                <Block style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksCompleted')}>
                     <Ionicons name="md-checkmark-circle" style={ styles.greenIcon }></Ionicons>
                 </Block>
-                <Block style={ styles.centering }>
+                <Block style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksAdmin')}>
                     <Ionicons name="md-laptop" style={ styles.openIcon }></Ionicons>
                 </Block>
             </Block>

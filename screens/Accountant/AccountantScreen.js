@@ -45,10 +45,19 @@ class Accountant extends Component {
 const styles = StyleSheet.create({
     blockStyle: {
         flex: 1,
-        paddingHorizontal: 10
+        paddingHorizontal: 0
     },
     cardStyle: {
-        padding: 20
+        padding: 20,
+        marginBottom: 10,
+        marginTop: 1,
+        marginHorizontal: 10,
+        backgroundColor: 'white',
+        shadowOffset: { width: 0, height: 12 },
+        shadowColor: 'black',
+        shadowOpacity: 1,
+        shadowRadius: 16.00,
+        elevation: 24
     },
     textStyle: {
         marginTop: -30
