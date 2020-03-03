@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Text, Block, Button, Card } from 'galio-framework';
-import { StyleSheet, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
 import Header from '../../common/Header';
 import { Ionicons } from '@expo/vector-icons';
+import Colors from '../../constants/Colors';
 
 const height = Dimensions.get('window').height - 147;
 
@@ -12,7 +13,7 @@ class Admin extends Component {
             <Block style={ styles.blockStyle }>
                 <Header title="Organization 1" />
                 <ScrollView>
-                    <Block style={{ minHeight: height }}>
+                    <Block style={ styles.footerAtBottom }>
                         <Block style={ styles.btnPosition }>
                             <Button style={ styles.addBtn } round onPress={() => this.props.navigation.navigate('AddNewProject')} >
                                 <Text style={ styles.btnText }>
@@ -20,18 +21,20 @@ class Admin extends Component {
                                 </Text>
                             </Button>
                         </Block>
-                        <Card borderless shadow style={ styles.cardStyle } >
-                            <Block style={ styles.spaceBetween}>
-                                <Block>
-                                    <Text h5 style={ styles.textStyle }>Project 1</Text>
-                                    <Text muted>02-01-2010</Text>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectTasks')}>
+                            <Card borderless style={ styles.cardStyle } >
+                                <Block style={ styles.spaceBetween}>
+                                    <Block>
+                                        <Text h5 style={ styles.textStyle }>Project 1</Text>
+                                        <Text muted>02-01-2010</Text>
+                                    </Block>
+                                    <Block>
+                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasks')}>
+                                        </Button>
+                                    </Block>
                                 </Block>
-                                <Block>
-                                    <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasks')}>
-                                    </Button>
-                                </Block>
-                            </Block>
-                        </Card>
+                            </Card>
+                        </TouchableOpacity>
                     </Block>
 
                     <Block style={ styles.footer }>
@@ -57,8 +60,12 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 10
     },
+    footerAtBottom: {
+        minHeight: height
+    },
     cardStyle: {
-        padding: 20
+        padding: 20,
+        backgroundColor: 'white'
     },
     textStyle: {
         marginTop: -30
@@ -72,16 +79,16 @@ const styles = StyleSheet.create({
         marginTop: -20,
         width: 30,
         height: 30,
-        backgroundColor: 'white'
+        backgroundColor: Colors.iconBackground
     },
     addBtn: {
-        backgroundColor: 'blue',
+        backgroundColor: Colors.addBtn,
         width: '26%',
         height: 32,
         marginBottom: 20
     },
     btnText: {
-        color: 'white'
+        color: Colors.btnText
     },
     btnPosition: {
         flexDirection: 'row',
@@ -99,7 +106,7 @@ const styles = StyleSheet.create({
     },
     footerBtn: {
         width: '49%',
-        backgroundColor: 'rgb(238,244,248)',
+        backgroundColor: Colors.footerBtnColor,
         flexDirection: 'row'
     },
     icon: {

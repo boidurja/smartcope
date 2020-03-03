@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { Text, Block, Button } from 'galio-framework';
-import { StyleSheet, View, ScrollView } from 'react-native';
+import { Card, Text, Block, Button } from 'galio-framework';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import Header from '../../common/Header';
 import { Dimensions } from 'react-native';
+import Colors from '../../constants/Colors';
+import { Ionicons } from '@expo/vector-icons';
+import Footer from '../../common/Footer';
 
 const height = Dimensions.get('window').height - 147;
 
@@ -10,10 +13,28 @@ class TasksOpen extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
-                <Header title="" />
+                <Header title="Organization 1" />
                 <ScrollView>
                     <Block style={{ minHeight: height }}>
-                        <Block style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <TouchableOpacity>
+                            <Card borderless style={ styles.cardStyle } >
+                                <Block style={ styles.spaceBetween}>
+                                    <Block style={ styles.leftSpaceBetween}>
+                                        <Ionicons name="md-radio-button-off" style={ styles.cardIcon }></Ionicons>
+                                        <Block>
+                                            <Text h5 style={ styles.textStyle }>Task 1</Text>
+                                            <Text muted>02-11-2010</Text>
+                                        </Block>
+                                    </Block>
+                                    <Block>
+                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('')}>
+                                            Start
+                                        </Button>
+                                    </Block>
+                                </Block>
+                            </Card>
+                        </TouchableOpacity>
+                        {/*<Block style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                             <Text h4>Organization 1</Text>
                         </Block>
                         <Block style={ styles.btnGroup } >
@@ -99,10 +120,10 @@ class TasksOpen extends Component {
                                     </Button>
                                 </Block>
                             </View>
-                        </Block>
+                        </Block>*/}
                     </Block>
                 
-                    <Block style={ styles.footer }>
+                    {/*<Block style={ styles.footer }>
                         <Block style={ styles.footerBtns }>
                             <Button style={ styles.footerBtn } onPress={() => this.props.navigation.navigate('Admin')}>
                                 <Text h5>Projects</Text>
@@ -111,7 +132,8 @@ class TasksOpen extends Component {
                                 <Text h5>Tasks</Text>
                             </Button>
                         </Block>
-                    </Block>
+                    </Block>*/}
+                    <Footer />
                 </ScrollView>
             </Block>
         );
@@ -123,7 +145,41 @@ const styles = StyleSheet.create({
         overflow: 'scroll',
         paddingHorizontal: 10
     },
-    quickAddTaskBtn: {
+    cardStyle: {
+        padding: 20,
+        marginBottom: 10,
+        backgroundColor: 'white'
+    },
+    spaceBetween: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: -30
+    },
+    leftSpaceBetween: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    textStyle: {
+        marginTop: -30
+    },
+    cardIcon: {
+        fontSize: 40,
+        marginRight: 30,
+        marginTop: -30
+    },
+    iconStyle: {
+        marginTop: -20,
+        width: 30,
+        height: 30,
+        backgroundColor: Colors.iconBackground
+    },
+    startBtn: {
+        backgroundColor: Colors.addBtn,
+        width: 100,
+        borderRadius: 10,
+        marginTop: -30
+    }
+    /*quickAddTaskBtn: {
         width: '48%',
         backgroundColor: 'rgb(77,176,188)'
     },
@@ -181,7 +237,7 @@ const styles = StyleSheet.create({
     footerBtn: {
         width: '49%',
         backgroundColor: 'rgb(238,244,248)',
-    }
+    }*/
 });
 
 export default TasksOpen;

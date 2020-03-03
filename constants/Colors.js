@@ -22,5 +22,10 @@ export default {
   accountantCard: 'rgb(230,239,243)',
   addBtn: 'blue',
   cancelBtn: 'red',
-  submitBtn: 'blue'
+  submitBtn: 'blue',
+  footerBtnColor: 'rgb(238,244,248)',
+  iconBackground: 'white',
+  orangeIcon: 'orange',
+  redIcon: 'red',
+  greenIcon: 'green'
 };
