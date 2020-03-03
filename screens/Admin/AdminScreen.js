@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, Block, Button, Card } from 'galio-framework';
 import { StyleSheet, ScrollView, Dimensions } from 'react-native';
 import Header from '../../common/Header';
+import { Ionicons } from '@expo/vector-icons';
 
 const height = Dimensions.get('window').height - 147;
 
@@ -14,7 +15,7 @@ class Admin extends Component {
                     <Block style={{ minHeight: height }}>
                         <Block style={ styles.btnPosition }>
                             <Button style={ styles.addBtn } round onPress={() => this.props.navigation.navigate('AddNewProject')} >
-                                <Text style={ styles.btnText}>
+                                <Text style={ styles.btnText }>
                                     Add
                                 </Text>
                             </Button>
@@ -36,9 +37,11 @@ class Admin extends Component {
                     <Block style={ styles.footer }>
                         <Block style={ styles.footerBtns }>
                             <Button style={ styles.footerBtn } onPress={() => this.props.navigation.navigate('Admin')}>
+                                <Ionicons name="md-laptop" style={ styles.icon } />
                                 <Text h5>Projects</Text>
                             </Button>
                             <Button style={ styles.footerBtn } onPress={() => this.props.navigation.navigate('TasksOpen')}>
+                            <Ionicons name="md-calendar" style={ styles.icon } />
                                 <Text h5>Tasks</Text>
                             </Button>
                         </Block>
@@ -97,6 +100,11 @@ const styles = StyleSheet.create({
     footerBtn: {
         width: '49%',
         backgroundColor: 'rgb(238,244,248)',
+        flexDirection: 'row'
+    },
+    icon: {
+        fontSize: 25,
+        marginRight: 8
     }
 });
 
