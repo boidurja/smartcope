@@ -27,7 +27,7 @@ class TasksOpen extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('')}>
+                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
                                             Start
                                         </Button>
                                     </Block>
@@ -46,7 +46,7 @@ class TasksOpen extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('')}>
+                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
                                             Start
                                         </Button>
                                     </Block>

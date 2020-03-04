@@ -112,7 +112,7 @@ class SuperAdmin extends Component {
 const styles = StyleSheet.create({
     blockStyle: {
         flex: 1,
-        paddingHorizontal: 20
+        paddingHorizontal: 10
     },
     cardStyle: {
         padding: 20,

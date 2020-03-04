@@ -27,5 +27,6 @@ export default {
   iconBackground: 'white',
   orangeIcon: 'orange',
   redIcon: 'red',
-  greenIcon: 'green'
+  greenIcon: 'green',
+  shareLocation: 'black'
 };
