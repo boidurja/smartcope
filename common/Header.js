@@ -23,8 +23,7 @@ const styles = StyleSheet.create({
         height: 90,
         paddingTop: 40,
         flexDirection: 'row',
-        paddingLeft: 10,
-        paddingRight: 10,
+        paddingHorizontal: 10,
         justifyContent: 'space-between'
     },
     title: {

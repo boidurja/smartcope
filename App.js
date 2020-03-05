@@ -28,6 +28,7 @@ import ConvertToCompleteScreen from './screens/Admin/ConvertToCompleteScreen';
 import TasksBlockedScreen from './screens/Admin/TasksBlockedScreen';
 import TasksCompletedScreen from './screens/Admin/TasksCompletedScreen';
 import ConvertToBlockScreen from './screens/Admin/ConvertToBlockScreen';
+import TaskDetailsScreen from './screens/Admin/TaskDetailsScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -65,6 +66,7 @@ function App() {
         <Stack.Screen name="TasksBlocked" component={TasksBlockedScreen} />
         <Stack.Screen name="TasksCompleted" component={TasksCompletedScreen} />
         <Stack.Screen name="ConvertToBlock" component={ConvertToBlockScreen} />
+        <Stack.Screen name="TaskDetails" component={TaskDetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

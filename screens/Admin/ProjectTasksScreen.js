@@ -30,7 +30,7 @@ class ProjectTasks extends Component {
                             </Button>
                         </Block>
 
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('TaskDetails')}>
                             <Card borderless style={ styles.cardStyle } >
                                 <Block style={ styles.spaceBetween}>
                                     <Block style={ styles.leftSpaceBetween}>
