@@ -1,26 +1,68 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button } from 'galio-framework';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, ScrollView } from 'react-native';
 import Header from '../../common/Header';
 import Colors from '../../constants/Colors';
+import DatePicker from 'react-native-datepicker';
 
 class AddNewTaskM extends Component {
+
+    constructor(props){
+        super(props)
+        this.state = {dueDate: ''}
+    }
+
+    handleDueDateChange(date) {
+        this.props.date = true;
+        this.setState({dueDate: date});
+    }
+
     render() {
         return (
             <Block style={ styles.blockStyle }>
                 <Header title="Users" />
 
+                <ScrollView>
+
                 <Text h4>
                     Add New Task
                 </Text>
                 
-                <Input placeholder="Enter Task Name here" label="Task Name" style={ styles.input }/>
+                <KeyboardAvoidingView style={{flex: 1}} behavior="padding" enabled>
 
-                <Input style={ styles.input } placeholder="Enter due date here" label="Due Date" />
+                <Input placeholder="Task Name" rounded style={{ marginTop: 10 }} />
+
+                <DatePicker
+                            style={ styles.datePickerStyle }
+                            date={this.state.dueDate}
+                            mode="date"
+                            placeholder="Due Date"
+                            format="YYYY-MM-DD"
+                            confirmBtnText="Confirm"
+                            cancelBtnText="Cancel"
+                            showIcon={false}
+                            customStyles={{
+                                dateInput: {  
+                                    borderRadius: 30,
+                                    marginTop: 15,
+                                    backgroundColor: 'white'
+                                },
+                                placeholderText: {
+                                    marginLeft: -248,
+                                    color: 'darkgrey'
+                                },
+                                dateText: {
+                                    marginRight: 225
+                                }
+                            }}
+                            onDateChange={ this.handleDueDateChange.bind(this) }
+                        />
                 
-                <Input style={ styles.input } placeholder="Enter owner / user name here" label="Owner / Users" />
+                <Input placeholder="Owner / Username" rounded />
 
-                <Input style={ styles.input } placeholder="Enter Task details here" label="Task Details" />
+                <Input placeholder="Task Details" rounded multiline style={{ height: 100 }} />
+
+                </KeyboardAvoidingView>
 
                 <Block style={ styles.btnBox }>
                     <Button round style={ styles.cancelBtn } onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
@@ -30,6 +72,7 @@ class AddNewTaskM extends Component {
                         <Text style={ styles.btnTextColor }>Submit</Text>
                     </Button>
                 </Block>
+                </ScrollView>
             </Block>
         );
     }
@@ -40,11 +83,9 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 10
     },
-    input: {
-        borderLeftWidth: 0,
-        borderRightWidth: 0,
-        borderTopWidth: 0,
-        borderBottomWidth: 1
+    datePickerStyle: {
+        width: '100%',
+        marginBottom: 15
     },
     cancelBtn: {
         backgroundColor: Colors.cancelBtn,

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button } from 'galio-framework';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, ScrollView } from 'react-native';
 import Header from '../../common/Header';
 import DatePicker from 'react-native-datepicker';
 import Colors from '../../constants/Colors';
@@ -21,7 +21,10 @@ class AddNewOrganization extends Component {
         <Block style={ styles.blockStyle }>
             <Header title="Organizations" />
             <Block>
+                <ScrollView>
                 <Text p style={ styles.addNew }>Add New Organization</Text>
+
+                <KeyboardAvoidingView style={{flex: 1}} behavior="padding" enabled>
                 <Input placeholder="Organization Name" rounded />
                 <Input placeholder="Organization Email" rounded />
                 <Input placeholder="Contact Person" rounded />
@@ -52,7 +55,9 @@ class AddNewOrganization extends Component {
                     }}
                     onDateChange={ this.handleDateChange.bind(this) }
                 />
+                </KeyboardAvoidingView>
                 <Button round style={ styles.submitBtn } onPress={() => this.props.navigation.navigate('SuperAdmin')}>Submit</Button>
+                </ScrollView>
             </Block>
             
         </Block>

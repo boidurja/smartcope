@@ -66,7 +66,7 @@ class EditTask extends Component {
                             onDateChange={ this.handleDueDateChange.bind(this) }
                         />
                         <Input placeholder="Owner / User Name" rounded style={{ marginTop: 15 }}/>
-                        <Input placeholder="Task Details" rounded />
+                        <Input placeholder="Task Details" rounded multiline style={{ height: 100 }}/>
                         <View style={ styles.picker }>
                             <Picker
                                 selectedValue={this.state.status}
@@ -151,7 +151,7 @@ class EditTask extends Component {
                             <Text muted style={{ marginLeft: 15 }}>Add Attachments</Text>
                             <Ionicons name="ios-add" style={{ marginRight: 17, fontSize: 20 }}></Ionicons>
                         </Block>
-                        <Input placeholder="Notes" rounded style={{ marginTop: 7}} />
+                        <Input placeholder="Notes" rounded multiline style={{ height: 100, marginTop: 7}} />
                     </KeyboardAvoidingView>
 
 

@@ -29,6 +29,7 @@ import TasksBlockedScreen from './screens/Admin/TasksBlockedScreen';
 import TasksCompletedScreen from './screens/Admin/TasksCompletedScreen';
 import ConvertToBlockScreen from './screens/Admin/ConvertToBlockScreen';
 import TaskDetailsScreen from './screens/Admin/TaskDetailsScreen';
+import TaskNotesScreen from './screens/Admin/TaskNotesScreen';
 
 import ManagerScreen from './screens/Manager/ManagerScreen';
 import TasksOpenMScreen from './screens/Manager/TasksOpenMScreen';
@@ -76,6 +77,7 @@ function App() {
         <Stack.Screen name="TasksCompleted" component={TasksCompletedScreen} />
         <Stack.Screen name="ConvertToBlock" component={ConvertToBlockScreen} />
         <Stack.Screen name="TaskDetails" component={TaskDetailsScreen} />
+        <Stack.Screen name="TaskNotes" component={TaskNotesScreen} />
 
         <Stack.Screen name="Manager" component={ManagerScreen} />
         <Stack.Screen name="TasksOpenM" component={TasksOpenMScreen} />
