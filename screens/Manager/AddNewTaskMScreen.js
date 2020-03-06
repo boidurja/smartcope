@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import Header from '../../common/Header';
 import Colors from '../../constants/Colors';
 
-class AddNewTask extends Component {
+class AddNewTaskM extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
@@ -23,10 +23,10 @@ class AddNewTask extends Component {
                 <Input style={ styles.input } placeholder="Enter Task details here" label="Task Details" />
 
                 <Block style={ styles.btnBox }>
-                    <Button round style={ styles.cancelBtn } onPress={() => this.props.navigation.navigate('ProjectTasks')}>
+                    <Button round style={ styles.cancelBtn } onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
                         <Text style={ styles.btnTextColor }>Cancel</Text>
                     </Button>
-                    <Button round style={ styles.submitBtn } onPress={() => this.props.navigation.navigate('ProjectTasks')}>
+                    <Button round style={ styles.submitBtn } onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
                         <Text style={ styles.btnTextColor }>Submit</Text>
                     </Button>
                 </Block>
@@ -65,4 +65,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default AddNewTask;
+export default AddNewTaskM;

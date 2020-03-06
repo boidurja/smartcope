@@ -7,7 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 const height = Dimensions.get('window').height - 147;
 
-class TasksCompleted extends Component {
+class TasksCompletedM extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
@@ -108,19 +108,19 @@ class TasksCompleted extends Component {
                     </Block>
 
                     <Block style={ styles.btnBlock }>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksOpen')}>
+                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksOpenM')}>
                             <Ionicons name="md-radio-button-off" style={ styles.openIcon }></Ionicons>
                         </Button>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
+                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksInProgressM')}>
                             <Ionicons name="md-time" style={ styles.orangeIcon }></Ionicons>
                         </Button>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksBlocked')}>
+                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksBlockedM')}>
                             <Ionicons name="md-close-circle" style={ styles.redIcon }></Ionicons>
                         </Button>
-                        <Button color="white" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksCompleted')}>
+                        <Button color="white" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksCompletedM')}>
                             <Ionicons name="md-checkmark-circle" style={ styles.greenIcon }></Ionicons>
                         </Button>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('Admin')}>
+                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('Manager')}>
                             <Ionicons name="md-laptop" style={ styles.openIcon }></Ionicons>
                         </Button>
                     </Block>
@@ -265,4 +265,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default TasksCompleted;
+export default TasksCompletedM;

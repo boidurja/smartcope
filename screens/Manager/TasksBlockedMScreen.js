@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
-import { Card, Text, Block, Button } from 'galio-framework';
-import { StyleSheet, View, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
+import { Text, Block, Button, Card } from 'galio-framework';
+import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
 import Header from '../../common/Header';
-import Colors from '../../constants/Colors';
+import { Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import Colors from '../../constants/Colors';
+//import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const height = Dimensions.get('window').height - 147;
 
-class TasksCompleted extends Component {
+class TasksBlockedM extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
                 <Header title="Organization 1" />
-                
                 <ScrollView>
                     <Block style={{ minHeight: height }}>
                         <TouchableOpacity>
                             <Card borderless style={ styles.cardStyle } >
                                 <Block style={ styles.spaceBetween}>
                                     <Block style={ styles.leftSpaceBetween}>
-                                        <Ionicons name="md-checkmark-circle" style={ styles.cardIcon }></Ionicons>
+                                        <Ionicons name="md-close-circle" style={ styles.cardIcon }></Ionicons>
                                         <Block>
                                             <Text h5 style={ styles.textStyle }>Task 1</Text>
                                             <Text muted>02-11-2010</Text>
@@ -28,6 +29,7 @@ class TasksCompleted extends Component {
                                 </Block>
                             </Card>
                         </TouchableOpacity>
+                        
                         {/*<Block style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                             <Text h4>Organization 1</Text>
                         </Block>
@@ -38,11 +40,11 @@ class TasksCompleted extends Component {
                             <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
                                 <Text style={ styles.text }>In Progress</Text>
                             </Button>
-                            <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksBlocked')}>
-                                <Text style={ styles.text }>Blocked</Text>
-                            </Button>
                             <Button style={ styles.btnActive }>
-                                <Text style={ styles.textActive }>Completed</Text>
+                                <Text style={ styles.textActive }>Blocked</Text>
+                            </Button>
+                            <Button style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksCompleted')}>
+                                <Text style={ styles.text }>Completed</Text>
                             </Button>
                             
                         </Block>
@@ -53,74 +55,69 @@ class TasksCompleted extends Component {
                                     <Text h5 style={{ marginBottom: 20 }}>Project 1</Text>
                                     <Text>Task name</Text>
                                     <Text muted style={ styles.textBackground } >Lorem</Text>
-                                    <Text>Task Details:</Text>
-                                    <Text muted style={ styles.textBackground } >Lor em ip s um Lo r em i ps um L or em ips um Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </Text>
-                                    <Text>Assigned to </Text>
-                                    <Text muted style={ styles.textBackground } >Lorem ipsum </Text>
+                                    <Text>Assigned to</Text>
+                                    <Text muted style={ styles.textBackground } >Lor em ip s um Lo r em i ps </Text>
+                                    <Text>Task details </Text>
+                                    <Text muted style={ styles.textBackground } >Lorem ipsum Lorem ipsum Lorem Lorem ipsum Lorem ipsum Lorem  Lorem ipsum Lorem ipsum Lorem  ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem</Text>
                                 </Block>
                             </View>
-                            <View>
+                            <View style={{ flex: 1 }}>
+                                
                                 <Block style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
                                     <Block>
-                                        <Text style={{ marginTop: 10 }}>Total Expense</Text>
-                                        <Text h4 style={ styles.expenses }>1000/-</Text>
-                                    </Block>
-                                    <Block>
-                                        <Text>Start Date</Text>
+                                        <Text>Block Date</Text>
                                         <Text p style={ styles.dates }>03-01-2010</Text>
                                     </Block>
                                     <Block>
-                                        <Text>Complete Date</Text>
-                                        <Text p style={ styles.dates }>03-01-2010</Text>
+                                        <Text>Reason</Text>
+                                        <Text muted style={ styles.textBackground } >Lorem lore lorem loore ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem</Text>
                                     </Block>
                                 </Block>
                             </View>
                         </Block>
+
                         <Block style={ styles.card }>
                             <View style={{ flex: 2, marginRight: 10 }}>
                                 <Block style={{ flexDirection: 'column' }}>
-                                    <Text h5 style={{ marginBottom: 20 }}>Project 1</Text>
+                                    <Text h5 style={{ marginBottom: 20 }}>Project 2</Text>
                                     <Text>Task name</Text>
                                     <Text muted style={ styles.textBackground } >Lorem</Text>
-                                    <Text>Task Details:</Text>
-                                    <Text muted style={ styles.textBackground } >Lor em ip s um Lo r em i ps um L or em ips um Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </Text>
-                                    <Text>Assigned to </Text>
-                                    <Text muted style={ styles.textBackground } >Lorem ipsum </Text>
+                                    <Text>Assigned to</Text>
+                                    <Text muted style={ styles.textBackground } >Lor em ip s um Lo r em i ps </Text>
+                                    <Text>Task details </Text>
+                                    <Text muted style={ styles.textBackground } >Lorem ipsum Lorem ipsum Lorem Lorem ipsum Lorem ipsum Lorem  Lorem ipsum Lorem ipsum Lorem  ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem</Text>
                                 </Block>
                             </View>
-                            <View>
+                            <View style={{ flex: 1 }}>
+                                
                                 <Block style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
                                     <Block>
-                                        <Text style={{ marginTop: 10 }}>Total Expense</Text>
-                                        <Text h4 style={ styles.expenses }>1000/-</Text>
-                                    </Block>
-                                    <Block>
-                                        <Text>Start Date</Text>
+                                        <Text>Block Date</Text>
                                         <Text p style={ styles.dates }>03-01-2010</Text>
                                     </Block>
                                     <Block>
-                                        <Text>Complete Date</Text>
-                                        <Text p style={ styles.dates }>03-01-2010</Text>
+                                        <Text>Reason</Text>
+                                        <Text muted style={ styles.textBackground } >Lorem lore lorem loore ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem</Text>
                                     </Block>
                                 </Block>
                             </View>
                         </Block>*/}
                     </Block>
-
+                    
                     <Block style={ styles.btnBlock }>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksOpen')}>
+                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksOpenM')}>
                             <Ionicons name="md-radio-button-off" style={ styles.openIcon }></Ionicons>
                         </Button>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
+                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksInProgressM')}>
                             <Ionicons name="md-time" style={ styles.orangeIcon }></Ionicons>
                         </Button>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksBlocked')}>
+                        <Button color="white" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksBlockedM')}>
                             <Ionicons name="md-close-circle" style={ styles.redIcon }></Ionicons>
                         </Button>
-                        <Button color="white" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksCompleted')}>
+                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksCompletedM')}>
                             <Ionicons name="md-checkmark-circle" style={ styles.greenIcon }></Ionicons>
                         </Button>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('Admin')}>
+                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('Manager')}>
                             <Ionicons name="md-laptop" style={ styles.openIcon }></Ionicons>
                         </Button>
                     </Block>
@@ -170,7 +167,7 @@ const styles = StyleSheet.create({
         fontSize: 40,
         marginRight: 30,
         marginTop: -30,
-        color: Colors.greenIcon
+        color: Colors.redIcon
     },
     /*quickAddTaskBtn: {
         width: '48%',
@@ -188,11 +185,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         borderRadius: 5,
         fontSize: 14
-    },
-    expenses: {
-        backgroundColor: 'rgb(213,234,236)', 
-        paddingHorizontal: 10,
-        borderRadius: 5
     },
     btnGroup: {
         marginTop: 20,
@@ -265,4 +257,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default TasksCompleted;
+export default TasksBlockedM;

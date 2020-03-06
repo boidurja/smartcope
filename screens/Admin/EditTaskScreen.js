@@ -262,15 +262,6 @@ class EditTask extends Component {
                             <Text style={ styles.btnTextColor }>Submit</Text>
                         </Button>
                     </Block>
-
-                    {/*<Block style={ styles.btnBox }>
-                        <Button round style={ styles.cancelBtn } onPress={() => this.props.navigation.navigate('ProjectTasks')}>
-                            <Text style={{ color: 'rgb(68,125,132)' }}>Delete</Text>
-                        </Button>
-                        <Button round style={ styles.submitBtn } onPress={() => this.props.navigation.navigate('ProjectTasks')}>
-                            <Text style={{ color: 'white' }}>Submit</Text>
-                        </Button>
-                    </Block>*/}
                 </ScrollView>
             </Block>
         );
@@ -326,37 +317,6 @@ const styles = StyleSheet.create({
         marginTop: 20,
         backgroundColor: 'white'
     },
-    /*cancelBtn: {
-        backgroundColor: 'rgb(190,222,226)',
-        width: '48%',
-        marginVertical: 50,
-        borderWidth: 1,
-        borderColor: 'rgb(68,125,132)'
-    },
-    submitBtn: {
-        backgroundColor: 'rgb(77,176,188)',
-        width: '48%',
-        marginVertical: 50,
-        borderColor: 'rgb(95,143,149)',
-        borderWidth: 1
-    },
-    btnBox: {
-        flexDirection: 'row',
-        justifyContent: 'space-between'
-    },
-    attachments: {
-        borderLeftWidth: 0,
-        borderRightWidth: 0,
-        borderTopWidth: 0,
-        borderBottomWidth: 0,
-        width: '60%'
-    },
-    attachmentBtn: {
-        width: '25%',
-        backgroundColor: 'rgb(190,222,226)',
-        borderWidth: 1,
-        borderColor: 'rgb(68,125,132)'
-    }*/
     cancelBtn: {
         backgroundColor: Colors.cancelBtn,
         width: '48%',

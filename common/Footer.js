@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Card, Text, Block, Button } from 'galio-framework';
-import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { Block, Button } from 'galio-framework';
+import { StyleSheet } from 'react-native';
 import Colors from '../constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -24,9 +24,6 @@ class Footer extends Component {
                     <Ionicons name="md-laptop" style={ styles.openIcon }></Ionicons>
                 </Block>
             </Block>
-
-
-
         )
     }
 }

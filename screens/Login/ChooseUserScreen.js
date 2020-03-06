@@ -29,7 +29,7 @@ class ChooseUser extends Component {
                 </Button>
             </Block>
             <Block style={ styles.childBlockStyle }>
-                <Button round style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksOpen')}>
+                <Button round style={ styles.btn } onPress={() => this.props.navigation.navigate('Manager')}>
                     <Text style={ styles.txtColor }>
                         Manager
                     </Text>

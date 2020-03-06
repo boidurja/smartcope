@@ -30,6 +30,15 @@ import TasksCompletedScreen from './screens/Admin/TasksCompletedScreen';
 import ConvertToBlockScreen from './screens/Admin/ConvertToBlockScreen';
 import TaskDetailsScreen from './screens/Admin/TaskDetailsScreen';
 
+import ManagerScreen from './screens/Manager/ManagerScreen';
+import TasksOpenMScreen from './screens/Manager/TasksOpenMScreen';
+import TasksInProgressMScreen from './screens/Manager/TasksInProgressMScreen';
+import TasksBlockedMScreen from './screens/Manager/TasksBlockedMScreen';
+import TasksCompletedMScreen from './screens/Manager/TasksCompletedMScreen';
+import ProjectTasksMScreen from './screens/Manager/ProjectTasksMScreen';
+import AddNewTaskMScreen from './screens/Manager/AddNewTaskMScreen';
+import TaskDetailsMScreen from './screens/Manager/TaskDetailsMScreen';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -67,6 +76,16 @@ function App() {
         <Stack.Screen name="TasksCompleted" component={TasksCompletedScreen} />
         <Stack.Screen name="ConvertToBlock" component={ConvertToBlockScreen} />
         <Stack.Screen name="TaskDetails" component={TaskDetailsScreen} />
+
+        <Stack.Screen name="Manager" component={ManagerScreen} />
+        <Stack.Screen name="TasksOpenM" component={TasksOpenMScreen} />
+        <Stack.Screen name="TasksInProgressM" component={TasksInProgressMScreen} />
+        <Stack.Screen name="TasksBlockedM" component={TasksBlockedMScreen} />
+        <Stack.Screen name="TasksCompletedM" component={TasksCompletedMScreen} />
+        <Stack.Screen name="ProjectTasksM" component={ProjectTasksMScreen} />
+        <Stack.Screen name="AddNewTaskM" component={AddNewTaskMScreen} />
+        <Stack.Screen name="TaskDetailsM" component={TaskDetailsMScreen} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
