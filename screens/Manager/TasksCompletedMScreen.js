@@ -142,17 +142,19 @@ class TasksCompletedM extends Component {
 
 const styles = StyleSheet.create({
     blockStyle: {
-        overflow: 'scroll',
-        paddingHorizontal: 10
+        overflow: 'scroll'
     },
     cardStyle: {
         padding: 20,
         marginBottom: 10,
+        marginTop: 1,
+        marginHorizontal: 10,
         backgroundColor: 'white',
-        shadowOffset: { width: 10, height: 10 },
+        shadowOffset: { width: 0, height: 12 },
         shadowColor: 'black',
         shadowOpacity: 1,
-        elevation: 10
+        shadowRadius: 16.00,
+        elevation: 24
     },
     spaceBetween: {
         flexDirection: 'row',

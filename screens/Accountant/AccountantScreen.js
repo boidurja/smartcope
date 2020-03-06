@@ -7,7 +7,7 @@ import Header from '../../common/Header';
 class Accountant extends Component {
 
     state = {
-        projectNames: ['Project 1', 'Project 2', 'Project 3']
+        projectNames: ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5', 'Project 6', 'Project 7']
     }
 
     render() {

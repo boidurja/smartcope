@@ -17,6 +17,31 @@ class SuperAdmin extends Component {
                 "id": 2,
                 "name": "Org 2",
                 "activated": false
+            },
+            {
+                "id": 3,
+                "name": "Org 3",
+                "activated": false
+            },
+            {
+                "id": 4,
+                "name": "Org 4",
+                "activated": false
+            },
+            {
+                "id": 5,
+                "name": "Org 5",
+                "activated": false
+            },
+            {
+                "id": 6,
+                "name": "Org 6",
+                "activated": false
+            },
+            {
+                "id": 7,
+                "name": "Org 7",
+                "activated": false
             }
         ],
         selectedItem: null
@@ -69,9 +94,9 @@ class SuperAdmin extends Component {
                     }
                     )}
                 </ScrollView>    
-                    <Button style={ styles.addBtn } round onPress={() => this.props.navigation.navigate('AddNewOrganization')}>
-                        Add Organization
-                    </Button>
+                <Button style={ styles.addBtn } round onPress={() => this.props.navigation.navigate('AddNewOrganization')}>
+                    Add Organization
+                </Button>
                 
                 <Modal
                     animationType="slide"
@@ -111,12 +136,19 @@ class SuperAdmin extends Component {
 
 const styles = StyleSheet.create({
     blockStyle: {
-        flex: 1,
-        paddingHorizontal: 10
+        flex: 1
     },
     cardStyle: {
         padding: 20,
-        marginBottom: 5
+        marginBottom: 5,
+        marginHorizontal: 10,
+        marginTop: 1,
+        backgroundColor: 'white',
+        shadowOffset: { width: 0, height: 12 },
+        shadowColor: 'black',
+        shadowOpacity: 1,
+        shadowRadius: 16.00,
+        elevation: 24
     },
     textStyle: {
         marginTop: -30,
@@ -139,7 +171,7 @@ const styles = StyleSheet.create({
         height: 35
     },
     addBtn: {
-        marginTop: 30,
+        marginTop: 10,
         backgroundColor: Colors.addBtn,
         width: 180,
         marginLeft: 'auto',

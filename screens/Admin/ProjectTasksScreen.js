@@ -14,8 +14,7 @@ class ProjectTasks extends Component {
             <Block style={ styles.blockStyle }>
                 <Header title="Project 1" />
                 
-                <ScrollView>
-                    <Block style={ styles.footerAtBottom }>
+                
                         {/*<Block style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                             <Text h4>Project 1</Text>
                             <Button round style={ styles.quickAddTaskBtn } onPress={() => this.props.navigation.navigate('AddNewTask')}>
@@ -29,7 +28,8 @@ class ProjectTasks extends Component {
                                 </Text>
                             </Button>
                         </Block>
-
+                        <ScrollView>
+                        <Block style={ styles.footerAtBottom }>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('TaskDetails')}>
                             <Card borderless style={ styles.cardStyle } >
                                 <Block style={ styles.spaceBetween}>
@@ -71,6 +71,57 @@ class ProjectTasks extends Component {
                                         <Ionicons name="md-close-circle" style={ styles.redIcon }></Ionicons>
                                         <Block>
                                             <Text h5 style={ styles.textStyle }>Task 3</Text>
+                                            <Text muted>02-11-2010</Text>
+                                        </Block>
+                                    </Block>
+                                    <Block>
+                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } >
+                                        </Button>
+                                    </Block>
+                                </Block>
+                            </Card>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
+                            <Card borderless style={ styles.cardStyle } >
+                                <Block style={ styles.spaceBetween}>
+                                    <Block style={ styles.leftSpaceBetween}>
+                                        <Ionicons name="md-checkmark-circle" style={ styles.greenIcon }></Ionicons>
+                                        <Block>
+                                            <Text h5 style={ styles.textStyle }>Task 4</Text>
+                                            <Text muted>02-11-2010</Text>
+                                        </Block>
+                                    </Block>
+                                    <Block>
+                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } >
+                                        </Button>
+                                    </Block>
+                                </Block>
+                            </Card>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
+                            <Card borderless style={ styles.cardStyle } >
+                                <Block style={ styles.spaceBetween}>
+                                    <Block style={ styles.leftSpaceBetween}>
+                                        <Ionicons name="md-checkmark-circle" style={ styles.greenIcon }></Ionicons>
+                                        <Block>
+                                            <Text h5 style={ styles.textStyle }>Task 4</Text>
+                                            <Text muted>02-11-2010</Text>
+                                        </Block>
+                                    </Block>
+                                    <Block>
+                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } >
+                                        </Button>
+                                    </Block>
+                                </Block>
+                            </Card>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
+                            <Card borderless style={ styles.cardStyle } >
+                                <Block style={ styles.spaceBetween}>
+                                    <Block style={ styles.leftSpaceBetween}>
+                                        <Ionicons name="md-checkmark-circle" style={ styles.greenIcon }></Ionicons>
+                                        <Block>
+                                            <Text h5 style={ styles.textStyle }>Task 4</Text>
                                             <Text muted>02-11-2010</Text>
                                         </Block>
                                     </Block>
@@ -164,6 +215,8 @@ class ProjectTasks extends Component {
                             </View>
                         </Block>*/}
                     </Block>
+                    </ScrollView>
+
                     <Block style={ styles.footer }>
                         <Block style={ styles.footerBtns }>
                             <Button style={ styles.footerBtn } onPress={() => this.props.navigation.navigate('Admin')}>
@@ -176,7 +229,7 @@ class ProjectTasks extends Component {
                             </Button>
                         </Block>
                     </Block>
-                </ScrollView>
+                
             </Block>
         );
     }
@@ -184,8 +237,7 @@ class ProjectTasks extends Component {
 
 const styles = StyleSheet.create({
     blockStyle: {
-        overflow: 'scroll',
-        paddingHorizontal: 10
+        overflow: 'scroll'
     },
     footerAtBottom: {
         minHeight: height
@@ -193,7 +245,14 @@ const styles = StyleSheet.create({
     cardStyle: {
         padding: 20,
         marginBottom: 10,
-        backgroundColor: 'white'
+        marginHorizontal: 10,
+        marginTop: 1,
+        backgroundColor: 'white',
+        shadowOffset: { width: 0, height: 12 },
+        shadowColor: 'black',
+        shadowOpacity: 1,
+        shadowRadius: 16.00,
+        elevation: 24
     },
     spaceBetween: {
         flexDirection: 'row',
@@ -256,13 +315,14 @@ const styles = StyleSheet.create({
 
     btnPosition: {
         flexDirection: 'row',
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
+        marginRight: 10
     },
     addBtn: {
         backgroundColor: Colors.addBtn,
         width: '26%',
         height: 32,
-        marginBottom: 20
+        marginBottom: 10
     },
     btnText: {
         color: Colors.btnText
@@ -271,7 +331,8 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        marginTop: 10
+        marginTop: 10,
+        marginBottom: 45
     },
     footerBtns: {
         flexDirection: 'row',
