@@ -68,11 +68,11 @@ class SuperAdmin extends Component {
                         )
                     }
                     )}
-                    
+                </ScrollView>    
                     <Button style={ styles.addBtn } round onPress={() => this.props.navigation.navigate('AddNewOrganization')}>
                         Add Organization
                     </Button>
-                </ScrollView>
+                
                 <Modal
                     animationType="slide"
                     transparent={false}
@@ -143,7 +143,8 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.addBtn,
         width: 180,
         marginLeft: 'auto',
-        marginRight: 'auto'
+        marginRight: 'auto',
+        marginBottom: 10
     },
     myModal: {
         marginTop: 200,

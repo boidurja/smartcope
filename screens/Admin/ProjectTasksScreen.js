@@ -41,7 +41,7 @@ class ProjectTasks extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('')}>
+                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } >
                                         </Button>
                                     </Block>
                                 </Block>
@@ -58,7 +58,7 @@ class ProjectTasks extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('')}>
+                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } >
                                         </Button>
                                     </Block>
                                 </Block>
@@ -75,7 +75,7 @@ class ProjectTasks extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('')}>
+                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } >
                                         </Button>
                                     </Block>
                                 </Block>
@@ -92,7 +92,7 @@ class ProjectTasks extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('')}>
+                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } >
                                         </Button>
                                     </Block>
                                 </Block>

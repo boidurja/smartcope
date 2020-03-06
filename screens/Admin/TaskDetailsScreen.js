@@ -110,10 +110,10 @@ class TaskDetails extends Component {
                         </Block>
                     </Card>
                     <Block style={ styles.btnBox }>
-                        <Button round style={ styles.cancelBtn } onPress={() => this.props.navigation.navigate('')}>
+                        <Button round style={ styles.cancelBtn } onPress={() => this.props.navigation.navigate('ProjectTasks')}>
                             <Text style={ styles.btnTextColor }>Delete</Text>
                         </Button>
-                        <Button round style={ styles.submitBtn } onPress={() => this.props.navigation.navigate('')}>
+                        <Button round style={ styles.submitBtn } onPress={() => this.props.navigation.navigate('EditTask')}>
                             <Text style={ styles.btnTextColor }>Edit Task</Text>
                         </Button>
                     </Block>
