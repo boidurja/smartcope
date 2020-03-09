@@ -36,7 +36,7 @@ class ChooseUser extends Component {
                 </Button>
             </Block>
             <Block style={ styles.childBlockStyle }>
-                <Button round style={ styles.btn } onPress={() => this.props.navigation.navigate('TasksOpen')}>
+                <Button round style={ styles.btn } onPress={() => this.props.navigation.navigate('TeamMember')}>
                     <Text style={ styles.txtColor }>
                         Team Member
                     </Text>

@@ -42,6 +42,11 @@ import TaskDetailsMScreen from './screens/Manager/TaskDetailsMScreen';
 import TaskNotesMScreen from './screens/Manager/TaskNotesMScreen';
 import EditTaskMScreen from './screens/Manager/EditTaskMScreen';
 
+import TeamMemberScreen from './screens/TeamMember/TeamMemberScreen';
+import TasksInProgressTMScreen from './screens/TeamMember/TasksInProgressTMScreen';
+import TasksBlockedTMScreen from './screens/TeamMember/TasksBlockedTMScreen';
+import TasksCompletedTMScreen from './screens/TeamMember/TasksCompletedTMScreen';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -118,6 +123,11 @@ function App() {
         <Stack.Screen name="TaskDetailsM" component={TaskDetailsMScreen} />
         <Stack.Screen name="TaskNotesM" component={TaskNotesMScreen} />
         <Stack.Screen name="EditTaskM" component={EditTaskMScreen} />
+
+        <Stack.Screen name="TeamMember" component={TeamMemberScreen} />
+        <Stack.Screen name="TasksInProgressTM" component={TasksInProgressTMScreen} />
+        <Stack.Screen name="TasksBlockedTM" component={TasksBlockedTMScreen} />
+        <Stack.Screen name="TasksCompletedTM" component={TasksCompletedTMScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>
