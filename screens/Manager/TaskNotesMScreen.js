@@ -3,10 +3,9 @@ import { Text, Block, Card, Button, Input } from 'galio-framework';
 import { StyleSheet, ScrollView, FlatList, Image } from 'react-native';
 import Header from '../../common/Header';
 import Colors from '../../constants/Colors';
-import { Ionicons } from '@expo/vector-icons';
 //import { FlatList } from 'react-native-gesture-handler';
 
-class TaskNotes extends Component {
+class TaskNotesM extends Component {
 
     cancel () {
         
@@ -38,7 +37,7 @@ class TaskNotes extends Component {
                             <Image source={require('../../assets/images/man.jpg')} style={{ height: 50, width: 50, borderRadius: 25, marginRight: 10 }} />
                             <Block>
                                 <Text>Rohit</Text>
-                                <Text muted style={{ fontSize: 10}}>Admin</Text>
+                                <Text muted style={{ fontSize: 10}}>Manager</Text>
                             </Block>
                         </Block>
                         <Block style={ styles.time }>
@@ -59,7 +58,7 @@ class TaskNotes extends Component {
                             <Image source={require('../../assets/images/man.jpg')} style={{ height: 50, width: 50, borderRadius: 25, marginRight: 10 }} />
                             <Block>
                                 <Text>Rohit</Text>
-                                <Text muted style={{ fontSize: 10}}>Admin</Text>
+                                <Text muted style={{ fontSize: 10}}>Manager</Text>
                             </Block>
                         </Block>
                         <Block style={ styles.time }>
@@ -80,7 +79,7 @@ class TaskNotes extends Component {
                             <Image source={require('../../assets/images/man.jpg')} style={{ height: 50, width: 50, borderRadius: 25, marginRight: 10 }} />
                             <Block>
                                 <Text>Rohit</Text>
-                                <Text muted style={{ fontSize: 10}}>Admin</Text>
+                                <Text muted style={{ fontSize: 10}}>Manager</Text>
                             </Block>
                         </Block>
                         <Block style={ styles.time }>
@@ -101,7 +100,7 @@ class TaskNotes extends Component {
                             <Image source={require('../../assets/images/man.jpg')} style={{ height: 50, width: 50, borderRadius: 25, marginRight: 10 }} />
                             <Block>
                                 <Text>Rohit</Text>
-                                <Text muted style={{ fontSize: 10}}>Admin</Text>
+                                <Text muted style={{ fontSize: 10}}>Manager</Text>
                             </Block>
                         </Block>
                         <Block style={ styles.time }>
@@ -163,4 +162,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default TaskNotes;
+export default TaskNotesM;

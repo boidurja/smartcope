@@ -4,10 +4,11 @@ import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function Header(props) {
+
     return (
         <Block style={ styles.header }>
             <Block>
-                <Ionicons name="md-menu" size={32} color="grey" />
+                <Ionicons name="md-menu" size={32} color="grey" onPress={() => props.navigation.openDrawer()} />
                 <Text style={ styles.title } p>{ props.title }</Text>
             </Block>
             <Block>

@@ -7,8 +7,8 @@ import ChooseUserScreen from './screens/Login/ChooseUserScreen';
 
 import AccountantDrawerScreen from './screens/Accountant/AccountantDrawerScreen';
 import AccountantScreen from './screens/Accountant/AccountantScreen';
-import ProjectsScreen from './screens/Accountant/ProjectsScreen';
 import TasksScreen from './screens/Accountant/TasksScreen';
+import TaskPriceScreen from './screens/Accountant/TaskPriceScreen';
 import MyAccountScreen from './screens/Accountant/MyAccountScreen';
 
 import SuperAdminScreen from './screens/SuperAdmin/SuperAdminScreen';
@@ -39,11 +39,40 @@ import TasksCompletedMScreen from './screens/Manager/TasksCompletedMScreen';
 import ProjectTasksMScreen from './screens/Manager/ProjectTasksMScreen';
 import AddNewTaskMScreen from './screens/Manager/AddNewTaskMScreen';
 import TaskDetailsMScreen from './screens/Manager/TaskDetailsMScreen';
+import TaskNotesMScreen from './screens/Manager/TaskNotesMScreen';
+import EditTaskMScreen from './screens/Manager/EditTaskMScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+
 const Stack = createStackNavigator();
+
+const DrawerAccountant = createDrawerNavigator();
+
+function AccountantDrawer() {
+  return (
+    <DrawerAccountant.Navigator initialRouteName="Accountant">
+      <DrawerAccountant.Screen name="Accountant Home" component={AccountantScreen} />
+      <DrawerAccountant.Screen name="My Account" component={MyAccountScreen} />
+      <DrawerAccountant.Screen name="Tasks" component={TasksScreen} />
+      <DrawerAccountant.Screen name="Task Price" component={TaskPriceScreen} />
+    </DrawerAccountant.Navigator>
+  );
+}
+
+const DrawerSuperAdmin = createDrawerNavigator();
+
+function SuperAdminDrawer() {
+  return (
+    <DrawerSuperAdmin.Navigator initialRouteName="SuperAdmin">
+      <DrawerSuperAdmin.Screen name="SuperAdmin" component={SuperAdminScreen} />
+    </DrawerSuperAdmin.Navigator>
+  );
+}
+
 
 function App() {
   return (
@@ -53,13 +82,13 @@ function App() {
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
         <Stack.Screen name="ChooseUser" component={ChooseUserScreen} />
 
+        <Stack.Screen name="Accountant" component={AccountantDrawer} />
         <Stack.Screen name="AccountantDrawer" component={AccountantDrawerScreen} />
-        <Stack.Screen name="Accountant" component={AccountantScreen} />
-        <Stack.Screen name="Projects" component={ProjectsScreen} />
         <Stack.Screen name="Tasks" component={TasksScreen} />
+        <Stack.Screen name="Task Price" component={TaskPriceScreen} />
         <Stack.Screen name="My Account" component={MyAccountScreen} />
 
-        <Stack.Screen name="SuperAdmin" component={SuperAdminScreen} />
+        <Stack.Screen name="SuperAdmin" component={SuperAdminDrawer} />
         <Stack.Screen name="AddNewOrganization" component={AddNewOrganizationScreen} />
         <Stack.Screen name="OrganizationMembers" component={OrganizationMembersScreen} />
         <Stack.Screen name="AddNewUser" component={AddNewUserScreen} />
@@ -87,10 +116,12 @@ function App() {
         <Stack.Screen name="ProjectTasksM" component={ProjectTasksMScreen} />
         <Stack.Screen name="AddNewTaskM" component={AddNewTaskMScreen} />
         <Stack.Screen name="TaskDetailsM" component={TaskDetailsMScreen} />
+        <Stack.Screen name="TaskNotesM" component={TaskNotesMScreen} />
+        <Stack.Screen name="EditTaskM" component={EditTaskMScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>
-  );
+  )
 }
 
 export default App;

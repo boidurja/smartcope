@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Block, Input, Button } from 'galio-framework';
-import { StyleSheet, KeyboardAvoidingView, SafeAreaView } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView } from 'react-native';
 import Colors from '../../constants/Colors';
 
 class SignIn extends Component {
@@ -51,41 +51,39 @@ class SignIn extends Component {
         return (
             <Block style={ styles.blockStyle }>
                 <KeyboardAvoidingView style={{flex: 1}} behavior="padding" enabled keyboardVerticalOffset="170">
-                    <SafeAreaView style={{flex: 1}}>
-                        <Block style={ styles.blockStyle }>
-                            <Text p style={ styles.signIn }>Sign In</Text>
-                            <Text muted style={ styles.login }>Smartcope login screen</Text>
+                    <Block style={ styles.blockStyle }>
+                        <Text p style={ styles.signIn }>Sign In</Text>
+                        <Text muted style={ styles.login }>Smartcope login screen</Text>
+                    </Block>
+                    <Block style={ styles.blockStyle }>
+                        <Block style={{ paddingHorizontal: 20, position:'relative', bottom: this.state.bottom }}>                        
+                                <Input 
+                                    placeholder="Email" 
+                                    help="Email field is empty or Email is Not Correct" 
+                                    topHelp={false} 
+                                    bottomHelp={this.state.helpEmail} 
+                                    rounded 
+                                    onChangeText={(text) => this.onChangeEmail(text)}
+                                />
+                                <Input 
+                                    placeholder="password" 
+                                    help="Password is required" 
+                                    topHelp={false} 
+                                    bottomHelp={this.state.helpPass} 
+                                    password 
+                                    viewPass 
+                                    rounded 
+                                    onChangeText={(text) => this.onChangePass(text)}
+                                />
+                                <Block style={ styles.forgotPassword }>
+                                    <Text onPress={() => this.props.navigation.navigate('ForgotPassword')}>Forgot your password?</Text>
+                                </Block>
+                                <Button round style={ styles.signinBtn } onPress={() => this.signIn() }>
+                                    Sign in
+                                </Button>
+                                <Text style={ styles.signUpText }>Don't have an account? Sign up</Text>
                         </Block>
-                        <Block style={ styles.blockStyle }>
-                            <Block style={{ paddingHorizontal: 20, position:'relative', bottom: this.state.bottom }}>                        
-                                    <Input 
-                                        placeholder="Email" 
-                                        help="Email field is empty or Email is Not Correct" 
-                                        topHelp={false} 
-                                        bottomHelp={this.state.helpEmail} 
-                                        rounded 
-                                        onChangeText={(text) => this.onChangeEmail(text)}
-                                    />
-                                    <Input 
-                                        placeholder="password" 
-                                        help="Password is required" 
-                                        topHelp={false} 
-                                        bottomHelp={this.state.helpPass} 
-                                        password 
-                                        viewPass 
-                                        rounded 
-                                        onChangeText={(text) => this.onChangePass(text)}
-                                    />
-                                    <Block style={ styles.forgotPassword }>
-                                        <Text onPress={() => this.props.navigation.navigate('ForgotPassword')}>Forgot your password?</Text>
-                                    </Block>
-                                    <Button round style={ styles.signinBtn } onPress={() => this.signIn() }>
-                                        Sign in
-                                    </Button>
-                                    <Text style={ styles.signUpText }>Don't have an account? Sign up</Text>
-                            </Block>
-                        </Block>
-                    </SafeAreaView>
+                    </Block>
                 </KeyboardAvoidingView>
             </Block>
         );

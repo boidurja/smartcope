@@ -7,7 +7,7 @@ class MyAccount extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
-                <Header title="My Account" />
+                <Header title="My Account" navigation={this.props.navigation} />
                 <Text>My Account Screen</Text>
             </Block>
         );

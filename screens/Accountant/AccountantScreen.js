@@ -13,7 +13,7 @@ class Accountant extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
-                <Header title="Accounts" />
+                <Header title="Accounts" navigation={this.props.navigation} />
                 {/*<DrawerLeft />*/}
                 <ScrollView>
                     { this.state.projectNames.map((item, index) => { 
@@ -27,7 +27,7 @@ class Accountant extends Component {
                                         <Text muted>3 accounted tasks</Text>
                                     </Block>
                                     <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Projects')}>
+                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Tasks')}>
                                             
                                         </Button>
                                     </Block>

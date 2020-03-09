@@ -6,6 +6,11 @@ import Colors from '../../constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
 
 class TaskDetailsM extends Component {
+
+    latestNotes () {
+        this.props.navigation.navigate('TaskNotesM');
+    }
+
     render() {
         return (
             <Block style={ styles.blockStyle }>
@@ -55,7 +60,7 @@ class TaskDetailsM extends Component {
                         <Text muted style={{ fontSize: 10, marginTop: 10 }}>
                             Latest notes
                         </Text>
-                        <Text>
+                        <Text onPress={() => this.latestNotes() }>
                             Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem 
                         </Text>
                         <Card borderless style={{ marginTop: 5, padding: 10 }}>

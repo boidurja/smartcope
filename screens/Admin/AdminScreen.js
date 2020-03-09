@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
         shadowColor: 'black',
         shadowOpacity: 1,
         shadowRadius: 16.00,
-        elevation: 24
+        elevation: 5
     },
     textStyle: {
         marginTop: -30
