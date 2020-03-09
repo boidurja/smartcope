@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Text, Block, Input, Button, Card } from 'galio-framework';
-import { StyleSheet, ScrollView, View } from 'react-native';
+import { Text, Block, Button, Card } from 'galio-framework';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import Header from '../../common/Header';
 //import DrawerLeft from '../../common/DrawerLeft';
 
@@ -18,21 +18,23 @@ class Accountant extends Component {
                 <ScrollView>
                     { this.state.projectNames.map((item, index) => { 
                         return (
-                            <Card borderless shadow style={ styles.cardStyle } >
-                                <Block style={ styles.spaceBetween}>
-                                    <Block>
-                                        <Text h5 style={ styles.textStyle }>
-                                            {item}
-                                        </Text>
-                                        <Text muted>3 accounted tasks</Text>
+                            <TouchableOpacity>
+                                <Card borderless shadow style={ styles.cardStyle } >
+                                    <Block style={ styles.spaceBetween}>
+                                        <Block>
+                                            <Text h5 style={ styles.textStyle }>
+                                                {item}
+                                            </Text>
+                                            <Text muted>3 accounted tasks</Text>
+                                        </Block>
+                                        <Block>
+                                            <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Tasks')}>
+                                                
+                                            </Button>
+                                        </Block>
                                     </Block>
-                                    <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Tasks')}>
-                                            
-                                        </Button>
-                                    </Block>
-                                </Block>
-                            </Card>
+                                </Card>
+                            </TouchableOpacity>
                         )
                     }
                     )}
@@ -53,11 +55,11 @@ const styles = StyleSheet.create({
         marginTop: 1,
         marginHorizontal: 10,
         backgroundColor: 'white',
-        shadowOffset: { width: 0, height: 12 },
+        shadowOffset: { width: 10, height: 10 },
         shadowColor: 'black',
         shadowOpacity: 1,
         shadowRadius: 16.00,
-        elevation: 24
+        elevation: 5
     },
     textStyle: {
         marginTop: -30

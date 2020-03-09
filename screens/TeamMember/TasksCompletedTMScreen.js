@@ -189,11 +189,11 @@ const styles = StyleSheet.create({
         marginTop: 1,
         marginHorizontal: 10,
         backgroundColor: 'white',
-        shadowOffset: { width: 0, height: 12 },
+        shadowOffset: { width: 10, height: 10 },
         shadowColor: 'black',
         shadowOpacity: 1,
         shadowRadius: 16.00,
-        elevation: 24
+        elevation: 5
     },
     spaceBetween: {
         flexDirection: 'row',

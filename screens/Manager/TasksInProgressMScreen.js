@@ -12,7 +12,30 @@ class TasksInProgressM extends Component {
     state = {
         notesModalVisibility: false,
         addExpenseModalVisibility: false,
-        blockTaskModalVisibility: false
+        blockTaskModalVisibility: false,
+        TaskNames: [
+            {
+                "name": "Task 1"
+            },
+            {
+                "name": "Task 2"
+            },
+            {
+                "name": "Task 3"
+            },
+            {
+                "name": "Task 4"
+            },
+            {
+                "name": "Task 5"
+            },
+            {
+                "name": "Task 6"
+            },
+            {
+                "name": "Task 7"
+            }
+        ]
     }
 
     setNotesModalVisible(visible) {
@@ -57,33 +80,37 @@ class TasksInProgressM extends Component {
                 <Header title="Organization 1" />
                 <ScrollView>
                     <Block style={{ minHeight: height }}>
-                        <Card borderless style={ styles.card } >
-                            <Block style={ styles.row1 }>
-                                <Ionicons name="md-time" style={ styles.icon } ></Ionicons>
-                                <Block>
-                                    <Text>Task 1</Text>
-                                    <Text h5>1000/-</Text>
-                                    <Text muted>02-01-2020</Text>
-                                </Block>
-                                <Button style={ styles.iconBtn } onPress={() => { this.setNotesModalVisible(true);}}>
-                                    <MaterialIcons name="edit" style={ styles.iconEdit} ></MaterialIcons>
-                                </Button>
-                                <Button style={ styles.expenseBtn } onPress={() => { this.setAddExpenseModalVisible(true);}}>
-                                    <Text style={ styles.btnText }>Add Expense</Text>
-                                </Button>
-                            </Block>
-                            <Block style={ styles.row2 }>
-                                <Button style={ styles.blockBtn } onPress={() => { this.setBlockTaskModalVisible(true);}}>
-                                    <Text style={ styles.btnText }>Block Task</Text>
-                                </Button>
-                                <Button style={ styles.shareBtn }>
-                                    <Text style={ styles.btnText }>Share Location</Text>
-                                </Button>
-                                <Button style={ styles.completeBtn } onPress={() => { this.taskComplete()}}>
-                                    <Text style={ styles.btnText }>Task Complete</Text>
-                                </Button>
-                            </Block>
-                        </Card>
+                        { this.state.TaskNames.map((item, index) => { 
+                            return (
+                                <Card borderless style={ styles.card } >
+                                    <Block style={ styles.row1 }>
+                                        <Ionicons name="md-time" style={ styles.icon } ></Ionicons>
+                                        <Block>
+                                            <Text>{ item.name }</Text>
+                                            <Text h5>1000/-</Text>
+                                            <Text muted>02-01-2020</Text>
+                                        </Block>
+                                        <Button style={ styles.iconBtn } onPress={() => { this.setNotesModalVisible(true);}}>
+                                            <MaterialIcons name="edit" style={ styles.iconEdit} ></MaterialIcons>
+                                        </Button>
+                                        <Button style={ styles.expenseBtn } onPress={() => { this.setAddExpenseModalVisible(true);}}>
+                                            <Text style={ styles.btnText }>Add Expense</Text>
+                                        </Button>
+                                    </Block>
+                                    <Block style={ styles.row2 }>
+                                        <Button style={ styles.blockBtn } onPress={() => { this.setBlockTaskModalVisible(true);}}>
+                                            <Text style={ styles.btnText }>Block Task</Text>
+                                        </Button>
+                                        <Button style={ styles.shareBtn }>
+                                            <Text style={ styles.btnText }>Share Location</Text>
+                                        </Button>
+                                        <Button style={ styles.completeBtn } onPress={() => { this.taskComplete()}}>
+                                            <Text style={ styles.btnText }>Task Complete</Text>
+                                        </Button>
+                                    </Block>
+                                </Card>
+                            )
+                        })}
                         {/*<Block style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                             <Text h4>Organization 1</Text>
                         </Block>
@@ -168,24 +195,25 @@ class TasksInProgressM extends Component {
                             </Button>
                         </Block>
                     </Block>*/}
-                    <Block style={ styles.btnBlock }>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksOpenM')}>
-                            <Ionicons name="md-radio-button-off" style={ styles.openIcon }></Ionicons>
-                        </Button>
-                        <Button color="white" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksInProgressM')}>
-                            <Ionicons name="md-time" style={ styles.orangeIcon }></Ionicons>
-                        </Button>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksBlockedM')}>
-                            <Ionicons name="md-close-circle" style={ styles.redIcon }></Ionicons>
-                        </Button>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksCompletedM')}>
-                            <Ionicons name="md-checkmark-circle" style={ styles.greenIcon }></Ionicons>
-                        </Button>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('Manager')}>
-                            <Ionicons name="md-laptop" style={ styles.openIcon }></Ionicons>
-                        </Button>
-                    </Block>
                 </ScrollView>
+                <Block style={ styles.btnBlock }>
+                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksOpenM')}>
+                        <Ionicons name="md-radio-button-off" style={ styles.openIcon }></Ionicons>
+                    </Button>
+                    <Button color="white" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksInProgressM')}>
+                        <Ionicons name="md-time" style={ styles.orangeIcon }></Ionicons>
+                    </Button>
+                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksBlockedM')}>
+                        <Ionicons name="md-close-circle" style={ styles.redIcon }></Ionicons>
+                    </Button>
+                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksCompletedM')}>
+                        <Ionicons name="md-checkmark-circle" style={ styles.greenIcon }></Ionicons>
+                    </Button>
+                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('Manager')}>
+                        <Ionicons name="md-laptop" style={ styles.openIcon }></Ionicons>
+                    </Button>
+                </Block>
+                
                 <Modal animationType="slide" transparent={false} visible={this.state.notesModalVisibility}>
                     <Block style={ styles.myModal }>
                         <Card style={ styles.myCard }>
@@ -448,7 +476,7 @@ const styles = StyleSheet.create({
     btnBlock: {
         flex: 1,
         flexDirection: 'row',
-        marginTop: 10
+        marginBottom: 45
     },
     centering: {
         width: '20%'

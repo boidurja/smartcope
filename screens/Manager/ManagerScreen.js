@@ -8,124 +8,58 @@ import Colors from '../../constants/Colors';
 const height = Dimensions.get('window').height - 147;
 
 class Manager extends Component {
+
+    state = {
+        ProjectNames: [
+            {
+                "name": "Project 1"
+            },
+            {
+                "name": "Project 2"
+            },
+            {
+                "name": "Project 3"
+            },
+            {
+                "name": "Project 4"
+            },
+            {
+                "name": "Project 5"
+            },
+            {
+                "name": "Project 6"
+            },
+            {
+                "name": "Project 7"
+            },
+            
+        ]
+    }
+
     render() {
         return (
             <Block style={ styles.blockStyle }>
                 <Header title="Organization 1" />
                 <ScrollView>
                     <Block style={ styles.footerAtBottom }>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                            <Card borderless style={ styles.cardStyle } >
-                                <Block style={ styles.spaceBetween}>
-                                    <Block>
-                                        <Text h5 style={ styles.textStyle }>Project 1</Text>
-                                        <Text muted>02-01-2010</Text>
-                                    </Block>
-                                    <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                                        </Button>
-                                    </Block>
-                                </Block>
-                            </Card>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                            <Card borderless style={ styles.cardStyle } >
-                                <Block style={ styles.spaceBetween}>
-                                    <Block>
-                                        <Text h5 style={ styles.textStyle }>Project 1</Text>
-                                        <Text muted>02-01-2010</Text>
-                                    </Block>
-                                    <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                                        </Button>
-                                    </Block>
-                                </Block>
-                            </Card>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                            <Card borderless style={ styles.cardStyle } >
-                                <Block style={ styles.spaceBetween}>
-                                    <Block>
-                                        <Text h5 style={ styles.textStyle }>Project 1</Text>
-                                        <Text muted>02-01-2010</Text>
-                                    </Block>
-                                    <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                                        </Button>
-                                    </Block>
-                                </Block>
-                            </Card>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                            <Card borderless style={ styles.cardStyle } >
-                                <Block style={ styles.spaceBetween}>
-                                    <Block>
-                                        <Text h5 style={ styles.textStyle }>Project 1</Text>
-                                        <Text muted>02-01-2010</Text>
-                                    </Block>
-                                    <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                                        </Button>
-                                    </Block>
-                                </Block>
-                            </Card>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                            <Card borderless style={ styles.cardStyle } >
-                                <Block style={ styles.spaceBetween}>
-                                    <Block>
-                                        <Text h5 style={ styles.textStyle }>Project 1</Text>
-                                        <Text muted>02-01-2010</Text>
-                                    </Block>
-                                    <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                                        </Button>
-                                    </Block>
-                                </Block>
-                            </Card>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                            <Card borderless style={ styles.cardStyle } >
-                                <Block style={ styles.spaceBetween}>
-                                    <Block>
-                                        <Text h5 style={ styles.textStyle }>Project 1</Text>
-                                        <Text muted>02-01-2010</Text>
-                                    </Block>
-                                    <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                                        </Button>
-                                    </Block>
-                                </Block>
-                            </Card>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                            <Card borderless style={ styles.cardStyle } >
-                                <Block style={ styles.spaceBetween}>
-                                    <Block>
-                                        <Text h5 style={ styles.textStyle }>Project 1</Text>
-                                        <Text muted>02-01-2010</Text>
-                                    </Block>
-                                    <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                                        </Button>
-                                    </Block>
-                                </Block>
-                            </Card>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                            <Card borderless style={ styles.cardStyle } >
-                                <Block style={ styles.spaceBetween}>
-                                    <Block>
-                                        <Text h5 style={ styles.textStyle }>Project 1</Text>
-                                        <Text muted>02-01-2010</Text>
-                                    </Block>
-                                    <Block>
-                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
-                                        </Button>
-                                    </Block>
-                                </Block>
-                            </Card>
-                        </TouchableOpacity>
+                        { this.state.ProjectNames.map((item, index) => { 
+                            return (
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
+                                    <Card borderless style={ styles.cardStyle } >
+                                        <Block style={ styles.spaceBetween}>
+                                            <Block>
+                                                <Text h5 style={ styles.textStyle }>{ item.name }</Text>
+                                                <Text muted>02-01-2010</Text>
+                                            </Block>
+                                            <Block>
+                                                <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasksM')}>
+                                                </Button>
+                                            </Block>
+                                        </Block>
+                                    </Card>
+                                </TouchableOpacity>
+                            )
+                        })}
                     </Block>
                     </ScrollView>
 
@@ -160,11 +94,11 @@ const styles = StyleSheet.create({
         marginTop: 1,
         marginBottom: 10,
         backgroundColor: 'white',
-        shadowOffset: { width: 0, height: 12 },
+        shadowOffset: { width: 10, height: 10 },
         shadowColor: 'black',
         shadowOpacity: 1,
         shadowRadius: 16.00,
-        elevation: 24
+        elevation: 5
     },
     textStyle: {
         marginTop: -30
@@ -197,7 +131,6 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        marginTop: 10,
         marginBottom: 45
     },
     footerBtns: {

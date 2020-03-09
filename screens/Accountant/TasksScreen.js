@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Text, Block, Button, Card } from 'galio-framework';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import Header from '../../common/Header';
+//import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 class Tasks extends Component {
@@ -17,23 +18,23 @@ class Tasks extends Component {
             <ScrollView>
                 { this.state.tasks.map((item, index) => { 
                     return (
-                        <Card borderless shadow style={ styles.cardStyle }>
-                            <Block style={ styles.spaceBetween}>
-                                <Block>
-                                <Text h5 style={ styles.textStyle }>{item}</Text>
-                                    <Text muted>03-08-2019</Text>
+                        <TouchableOpacity>
+                            <Card borderless shadow style={ styles.cardStyle }>
+                                <Block style={ styles.spaceBetween}>
+                                    <Block>
+                                    <Text h5 style={ styles.textStyle }>{item}</Text>
+                                        <Text muted>03-08-2019</Text>
+                                    </Block>
+                                    <Block style={ styles.price }>
+                                        <Text>Rs. 1000</Text>
+                                    </Block>
+                                    <Block style={ styles.rightStyle }>
+                                        <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Task Price')}>
+                                        </Button>
+                                    </Block>
                                 </Block>
-                                <Block style={ styles.price }>
-                                    <Text>Rs. 1000</Text>
-                                </Block>
-                                <Block style={ styles.rightStyle }>
-                                    <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Task Price')}>
-                                        
-                                    </Button>
-                                    {/*<Ionicons name="ios-arrow-forward" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('Tasks')} />*/}
-                                </Block>
-                            </Block>
-                        </Card>
+                            </Card>
+                        </TouchableOpacity>
                     )
                 })}
             </ScrollView>
@@ -52,11 +53,11 @@ const styles = StyleSheet.create({
         marginTop: 1,
         marginHorizontal: 10,
         backgroundColor: 'white',
-        shadowOffset: { width: 0, height: 12 },
+        shadowOffset: { width: 10, height: 10 },
         shadowColor: 'black',
         shadowOpacity: 1,
         shadowRadius: 16.00,
-        elevation: 24
+        elevation: 5
     },
     textStyle: {
         marginTop: -30

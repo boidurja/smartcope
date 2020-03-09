@@ -8,6 +8,33 @@ import { Ionicons } from '@expo/vector-icons';
 const height = Dimensions.get('window').height - 147;
 
 class TasksCompletedM extends Component {
+
+    state = {
+        TaskNames: [
+            {
+                "name": "Task 1"
+            },
+            {
+                "name": "Task 2"
+            },
+            {
+                "name": "Task 3"
+            },
+            {
+                "name": "Task 4"
+            },
+            {
+                "name": "Task 5"
+            },
+            {
+                "name": "Task 6"
+            },
+            {
+                "name": "Task 7"
+            }
+        ]
+    }
+
     render() {
         return (
             <Block style={ styles.blockStyle }>
@@ -15,19 +42,23 @@ class TasksCompletedM extends Component {
                 
                 <ScrollView>
                     <Block style={{ minHeight: height }}>
-                        <TouchableOpacity>
-                            <Card borderless style={ styles.cardStyle } >
-                                <Block style={ styles.spaceBetween}>
-                                    <Block style={ styles.leftSpaceBetween}>
-                                        <Ionicons name="md-checkmark-circle" style={ styles.cardIcon }></Ionicons>
-                                        <Block>
-                                            <Text h5 style={ styles.textStyle }>Task 1</Text>
-                                            <Text muted>02-11-2010</Text>
+                        { this.state.TaskNames.map((item, index) => { 
+                            return (
+                                <TouchableOpacity>
+                                    <Card borderless style={ styles.cardStyle } >
+                                        <Block style={ styles.spaceBetween}>
+                                            <Block style={ styles.leftSpaceBetween}>
+                                                <Ionicons name="md-checkmark-circle" style={ styles.cardIcon }></Ionicons>
+                                                <Block>
+                                                    <Text h5 style={ styles.textStyle }>{ item.name }</Text>
+                                                    <Text muted>02-11-2010</Text>
+                                                </Block>
+                                            </Block>
                                         </Block>
-                                    </Block>
-                                </Block>
-                            </Card>
-                        </TouchableOpacity>
+                                    </Card>
+                                </TouchableOpacity>
+                            )
+                        })}
                         {/*<Block style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                             <Text h4>Organization 1</Text>
                         </Block>
@@ -106,24 +137,24 @@ class TasksCompletedM extends Component {
                             </View>
                         </Block>*/}
                     </Block>
-
-                    <Block style={ styles.btnBlock }>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksOpenM')}>
-                            <Ionicons name="md-radio-button-off" style={ styles.openIcon }></Ionicons>
-                        </Button>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksInProgressM')}>
-                            <Ionicons name="md-time" style={ styles.orangeIcon }></Ionicons>
-                        </Button>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksBlockedM')}>
-                            <Ionicons name="md-close-circle" style={ styles.redIcon }></Ionicons>
-                        </Button>
-                        <Button color="white" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksCompletedM')}>
-                            <Ionicons name="md-checkmark-circle" style={ styles.greenIcon }></Ionicons>
-                        </Button>
-                        <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('Manager')}>
-                            <Ionicons name="md-laptop" style={ styles.openIcon }></Ionicons>
-                        </Button>
-                    </Block>
+                </ScrollView>
+                <Block style={ styles.btnBlock }>
+                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksOpenM')}>
+                        <Ionicons name="md-radio-button-off" style={ styles.openIcon }></Ionicons>
+                    </Button>
+                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksInProgressM')}>
+                        <Ionicons name="md-time" style={ styles.orangeIcon }></Ionicons>
+                    </Button>
+                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksBlockedM')}>
+                        <Ionicons name="md-close-circle" style={ styles.redIcon }></Ionicons>
+                    </Button>
+                    <Button color="white" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksCompletedM')}>
+                        <Ionicons name="md-checkmark-circle" style={ styles.greenIcon }></Ionicons>
+                    </Button>
+                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('Manager')}>
+                        <Ionicons name="md-laptop" style={ styles.openIcon }></Ionicons>
+                    </Button>
+                </Block>
                     {/*<Block style={ styles.footer }>
                         <Block style={ styles.footerBtns }>
                             <Button style={ styles.footerBtn } onPress={() => this.props.navigation.navigate('Admin')}>
@@ -134,7 +165,6 @@ class TasksCompletedM extends Component {
                             </Button>
                         </Block>
                     </Block>*/}
-                </ScrollView>
             </Block>
         );
     }
@@ -241,7 +271,7 @@ const styles = StyleSheet.create({
     btnBlock: {
         flex: 1,
         flexDirection: 'row',
-        marginTop: 10
+        marginBottom: 45
     },
     centering: {
         width: '20%'
