@@ -11,7 +11,7 @@ class AddNewUser extends Component {
     render() {
     return (
         <Block style={ styles.blockStyle }>
-            <Header title="Users" />
+            <Header title="Users" navigation={this.props.navigation}/>
             <ScrollView>
             <Text p style={ styles.addNew }>Add New User</Text>
             <KeyboardAvoidingView enabled behavior="padding" >

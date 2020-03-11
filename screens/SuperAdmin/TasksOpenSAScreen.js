@@ -5,15 +5,15 @@ import Header from '../../common/Header';
 import { Dimensions } from 'react-native';
 import Colors from '../../constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
-//import Footer from '../../common/Footer';
+
 
 const height = Dimensions.get('window').height - 147;
 
-class TasksOpen extends Component {
+class TasksOpenSA extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
-                <Header title="Organization 1" />
+                <Header title="Organization 1" navigation={this.props.navigation} />
                 <ScrollView>
                     <Block style={{ minHeight: height }}>
                         <TouchableOpacity>
@@ -27,7 +27,7 @@ class TasksOpen extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
+                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgressSA')}>
                                             Start
                                         </Button>
                                     </Block>
@@ -46,7 +46,7 @@ class TasksOpen extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
+                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgressSA')}>
                                             Start
                                         </Button>
                                     </Block>
@@ -64,7 +64,7 @@ class TasksOpen extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
+                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgressSA')}>
                                             Start
                                         </Button>
                                     </Block>
@@ -82,7 +82,7 @@ class TasksOpen extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
+                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgressSA')}>
                                             Start
                                         </Button>
                                     </Block>
@@ -100,7 +100,7 @@ class TasksOpen extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
+                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgressSA')}>
                                             Start
                                         </Button>
                                     </Block>
@@ -118,7 +118,7 @@ class TasksOpen extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
+                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgressSA')}>
                                             Start
                                         </Button>
                                     </Block>
@@ -136,7 +136,7 @@ class TasksOpen extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
+                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgressSA')}>
                                             Start
                                         </Button>
                                     </Block>
@@ -154,7 +154,7 @@ class TasksOpen extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
+                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgressSA')}>
                                             Start
                                         </Button>
                                     </Block>
@@ -172,7 +172,7 @@ class TasksOpen extends Component {
                                         </Block>
                                     </Block>
                                     <Block>
-                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
+                                        <Button style={ styles.startBtn } onPress={() => this.props.navigation.navigate('TasksInProgressSA')}>
                                             Start
                                         </Button>
                                     </Block>
@@ -181,25 +181,23 @@ class TasksOpen extends Component {
                         </TouchableOpacity>
                     </Block>
                 </ScrollView>
-
                 <Block style={ styles.btnBlock }>
-                    <Button color="white" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksOpen')}>
+                    <Button color="white" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksOpenSA')}>
                         <Ionicons name="md-radio-button-off" style={ styles.openIcon }></Ionicons>
                     </Button>
-                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksInProgress')}>
+                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksInProgressSA')}>
                         <Ionicons name="md-time" style={ styles.orangeIcon }></Ionicons>
                     </Button>
-                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksBlocked')}>
+                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksBlockedSa')}>
                         <Ionicons name="md-close-circle" style={ styles.redIcon }></Ionicons>
                     </Button>
-                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksCompleted')}>
+                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('TasksCompletedSA')}>
                         <Ionicons name="md-checkmark-circle" style={ styles.greenIcon }></Ionicons>
                     </Button>
-                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('Admin')}>
+                    <Button color="transparent" style={ styles.centering } onPress={() => this.props.navigation.navigate('Projects')}>
                         <Ionicons name="md-laptop" style={ styles.openIcon }></Ionicons>
                     </Button>
                 </Block>
-                
             </Block>
         );
     }
@@ -256,7 +254,6 @@ const styles = StyleSheet.create({
         shadowRadius: 16.00,
         elevation: 24
     },
-    
     btnBlock: {
         flex: 1,
         flexDirection: 'row',
@@ -286,4 +283,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default TasksOpen;
+export default TasksOpenSA;

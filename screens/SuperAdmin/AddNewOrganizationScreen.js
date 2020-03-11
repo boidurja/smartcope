@@ -19,44 +19,44 @@ class AddNewOrganization extends Component {
     render() {
     return (
         <Block style={ styles.blockStyle }>
-            <Header title="Organizations" />
+            <Header title="Organizations" navigation={this.props.navigation}/>
             <Block>
                 <ScrollView>
-                <Text p style={ styles.addNew }>Add New Organization</Text>
+                    <Text p style={ styles.addNew }>Add New Organization</Text>
 
-                <KeyboardAvoidingView style={{flex: 1}} behavior="padding" enabled>
-                <Input placeholder="Organization Name" rounded />
-                <Input placeholder="Organization Email" rounded />
-                <Input placeholder="Contact Person" rounded />
-                <Input placeholder="Contact Person Contact Number" rounded />
-                <Input placeholder="Total Members" rounded />
-                
-                <DatePicker
-                    style={ styles.datePickerStyle }
-                    date={this.state.date}
-                    mode="date"
-                    placeholder="Expiration date"
-                    format="YYYY-MM-DD"
-                    confirmBtnText="Confirm"
-                    cancelBtnText="Cancel"
-                    showIcon={false}
-                    customStyles={{
-                        dateInput: {  
-                            borderRadius: 30,
-                            marginTop: 15,
-                            backgroundColor: 'white'
-                        },
-                        placeholderText: {
-                            marginLeft: -190
-                        },
-                        dateText: {
-                            marginRight: 210
-                        }
-                    }}
-                    onDateChange={ this.handleDateChange.bind(this) }
-                />
-                </KeyboardAvoidingView>
-                <Button round style={ styles.submitBtn } onPress={() => this.props.navigation.navigate('SuperAdmin')}>Submit</Button>
+                    <KeyboardAvoidingView style={{flex: 1}} behavior="padding" enabled>
+                        <Input placeholder="Organization Name" rounded />
+                        <Input placeholder="Organization Email" rounded />
+                        <Input placeholder="Contact Person" rounded />
+                        <Input placeholder="Contact Person Contact Number" rounded />
+                        <Input placeholder="Total Members" rounded />
+                        
+                        <DatePicker
+                            style={ styles.datePickerStyle }
+                            date={this.state.date}
+                            mode="date"
+                            placeholder="Expiration date"
+                            format="YYYY-MM-DD"
+                            confirmBtnText="Confirm"
+                            cancelBtnText="Cancel"
+                            showIcon={false}
+                            customStyles={{
+                                dateInput: {  
+                                    borderRadius: 30,
+                                    marginTop: 15,
+                                    backgroundColor: 'white'
+                                },
+                                placeholderText: {
+                                    marginLeft: -190
+                                },
+                                dateText: {
+                                    marginRight: 210
+                                }
+                            }}
+                            onDateChange={ this.handleDateChange.bind(this) }
+                        />
+                    </KeyboardAvoidingView>
+                    <Button round style={ styles.submitBtn } onPress={() => this.props.navigation.navigate('SuperAdmin')}>Submit</Button>
                 </ScrollView>
             </Block>
             

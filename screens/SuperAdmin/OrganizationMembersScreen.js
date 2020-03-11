@@ -27,7 +27,7 @@ class OrganizationMembers extends Component {
     render() {
     return (
         <Block style={ styles.blockStyle }>
-            <Header title="Organizations" />
+            <Header title="Organizations" navigation={this.props.navigation}/>
             
             <ScrollView>
                 <Card borderless style={ styles.cardStyle }>
@@ -121,7 +121,7 @@ class OrganizationMembers extends Component {
                             </Block>
                         </Block>
                     </Card>
-                    <Button round color="info" style={ styles.btnProjects } onPress={() => this.props.navigation.navigate('Admin') }>
+                    <Button round color="info" style={ styles.btnProjects } onPress={() => this.props.navigation.navigate('Projects') }>
                         Projects
                     </Button>
                 </Card>

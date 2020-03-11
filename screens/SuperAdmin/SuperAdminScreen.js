@@ -65,7 +65,7 @@ class SuperAdmin extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
-                <Header title="Organizations" />
+                <Header title="Organizations" navigation={this.props.navigation} />
                 <ScrollView>
                     { this.state.organizationNames.map((item, index) => { 
                         return (

@@ -16,6 +16,17 @@ import AddNewOrganizationScreen from './screens/SuperAdmin/AddNewOrganizationScr
 import OrganizationMembersScreen from './screens/SuperAdmin/OrganizationMembersScreen';
 import AddNewUserScreen from './screens/SuperAdmin/AddNewUserScreen';
 import EditNewUserScreen from './screens/SuperAdmin/EditNewUserScreen';
+import ProjectsScreen from './screens/SuperAdmin/ProjectsScreen';
+import AddNewProjectSAScreen from './screens/SuperAdmin/AddNewProjectSAScreen';
+import ProjectTasksSAScreen from './screens/SuperAdmin/ProjectTasksSAScreen';
+import AddNewTaskSAScreen from './screens/SuperAdmin/AddNewTaskSAScreen';
+import TaskDetailsSAScreen from './screens/SuperAdmin/TaskDetailsSAScreen';
+import EditTaskSAScreen from './screens/SuperAdmin/EditTaskSAScreen';
+import TaskNotesSAScreen from './screens/SuperAdmin/TaskNotesSAScreen';
+import TasksOpenSAScreen from './screens/SuperAdmin/TasksOpenSAScreen';
+import TasksInProgressSAScreen from './screens/SuperAdmin/TasksInProgressSAScreen';
+import TasksBlockedSAScreen from './screens/SuperAdmin/TasksBlockedSAScreen';
+import TasksCompletedSAScreen from './screens/SuperAdmin/TasksCompletedSAScreen';
 
 import AdminScreen from './screens/Admin/AdminScreen';
 import AddNewProjectScreen from './screens/Admin/AddNewProjectScreen';
@@ -59,8 +70,8 @@ const DrawerAccountant = createDrawerNavigator();
 
 function AccountantDrawer() {
   return (
-    <DrawerAccountant.Navigator initialRouteName="Accountant">
-      <DrawerAccountant.Screen name="Accountant Home" component={AccountantScreen} />
+    <DrawerAccountant.Navigator initialRouteName="Home" drawerStyle>
+      <DrawerAccountant.Screen name="Home" component={AccountantScreen} />
       <DrawerAccountant.Screen name="My Account" component={MyAccountScreen} />
       <DrawerAccountant.Screen name="Tasks" component={TasksScreen} />
       <DrawerAccountant.Screen name="Task Price" component={TaskPriceScreen} />
@@ -72,8 +83,23 @@ const DrawerSuperAdmin = createDrawerNavigator();
 
 function SuperAdminDrawer() {
   return (
-    <DrawerSuperAdmin.Navigator initialRouteName="SuperAdmin">
-      <DrawerSuperAdmin.Screen name="SuperAdmin" component={SuperAdminScreen} />
+    <DrawerSuperAdmin.Navigator initialRouteName="Home">
+      <DrawerSuperAdmin.Screen name="Home" component={SuperAdminScreen} />
+      <DrawerSuperAdmin.Screen name="Add New Organization" component={AddNewOrganizationScreen} />
+      <DrawerSuperAdmin.Screen name="Organization Members" component={OrganizationMembersScreen} />
+      <DrawerSuperAdmin.Screen name="Add New User" component={AddNewUserScreen} />
+      <DrawerSuperAdmin.Screen name="Edit New User" component={EditNewUserScreen} />
+      <DrawerSuperAdmin.Screen name="Projects" component={ProjectsScreen} />
+      <DrawerSuperAdmin.Screen name="Add New Project" component={AddNewProjectSAScreen} />
+      <DrawerSuperAdmin.Screen name="Project Tasks" component={ProjectTasksSAScreen} />
+      <DrawerSuperAdmin.Screen name="Add New Task" component={AddNewTaskSAScreen} />
+      <DrawerSuperAdmin.Screen name="Task Details" component={TaskDetailsSAScreen} />
+      <DrawerSuperAdmin.Screen name="Edit Task" component={EditTaskSAScreen} />
+      <DrawerSuperAdmin.Screen name="Task Notes" component={TaskNotesSAScreen} />
+      <DrawerSuperAdmin.Screen name="Tasks Open" component={TasksOpenSAScreen} />
+      <DrawerSuperAdmin.Screen name="Tasks In Progress" component={TasksInProgressSAScreen} />
+      <DrawerSuperAdmin.Screen name="Tasks Blocked" component={TasksBlockedSAScreen} />
+      <DrawerSuperAdmin.Screen name="Tasks Completed" component={TasksCompletedSAScreen} />
     </DrawerSuperAdmin.Navigator>
   );
 }
@@ -98,6 +124,17 @@ function App() {
         <Stack.Screen name="OrganizationMembers" component={OrganizationMembersScreen} />
         <Stack.Screen name="AddNewUser" component={AddNewUserScreen} />
         <Stack.Screen name="EditNewUser" component={EditNewUserScreen} />
+        <Stack.Screen name="Projects" component={ProjectsScreen} />
+        <Stack.Screen name="AddNewProjectSA" component={AddNewProjectSAScreen} />
+        <Stack.Screen name="ProjectTasksSA" component={ProjectTasksSAScreen} />
+        <Stack.Screen name="AddNewTaskSA" component={AddNewTaskSAScreen} />
+        <Stack.Screen name="TaskDetailsSA" component={TaskDetailsSAScreen} />
+        <Stack.Screen name="EditTaskSA" component={EditTaskSAScreen} />
+        <Stack.Screen name="TaskNotesSA" component={TaskNotesSAScreen} />
+        <Stack.Screen name="TasksOpenSA" component={TasksOpenSAScreen} />
+        <Stack.Screen name="TasksInProgressSA" component={TasksInProgressSAScreen} />
+        <Stack.Screen name="TasksBlockedSA" component={TasksBlockedSAScreen} />
+        <Stack.Screen name="TasksCompletedSA" component={TasksCompletedSAScreen} />
 
         <Stack.Screen name="Admin" component={AdminScreen} />
         <Stack.Screen name="AddNewProject" component={AddNewProjectScreen} />

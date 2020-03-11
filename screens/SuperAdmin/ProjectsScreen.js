@@ -7,7 +7,7 @@ import Colors from '../../constants/Colors';
 
 const height = Dimensions.get('window').height - 147;
 
-class Admin extends Component {
+class Projects extends Component {
     state = {
         Projects: [
             {
@@ -44,45 +44,45 @@ class Admin extends Component {
     render() {
         return (
             <Block style={ styles.blockStyle }>
-                <Header title="Organization 1" />
+                <Header title="Organization 1" navigation={this.props.navigation} />
                 
-                        <Block style={ styles.btnPosition }>
-                            <Button style={ styles.addBtn } round onPress={() => this.props.navigation.navigate('AddNewProject')} >
-                                <Text style={ styles.btnText }>
-                                    Add
-                                </Text>
-                            </Button>
-                        </Block>
-                        <ScrollView>
+                    <Block style={ styles.btnPosition }>
+                        <Button style={ styles.addBtn } round onPress={() => this.props.navigation.navigate('AddNewProjectSA')} >
+                            <Text style={ styles.btnText }>
+                                Add
+                            </Text>
+                        </Button>
+                    </Block>
+                    <ScrollView>
                         <Block style={ styles.footerAtBottom }>
-                        { this.state.Projects.map((item, index) => { 
-                            return (
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectTasks')}>
-                                    <Card borderless style={ styles.cardStyle } >
-                                        <Block style={ styles.spaceBetween}>
-                                            <Block>
-                                                <Text h5 style={ styles.textStyle }>{item.name}</Text>
-                                                <Text muted>02-01-2010</Text>
+                            { this.state.Projects.map((item, index) => { 
+                                return (
+                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('ProjectTasksSA')}>
+                                        <Card borderless style={ styles.cardStyle } >
+                                            <Block style={ styles.spaceBetween}>
+                                                <Block>
+                                                    <Text h5 style={ styles.textStyle }>{item.name}</Text>
+                                                    <Text muted>02-01-2010</Text>
+                                                </Block>
+                                                <Block>
+                                                    <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasksSA')}>
+                                                    </Button>
+                                                </Block>
                                             </Block>
-                                            <Block>
-                                                <Button onlyIcon icon="right" iconSize={30} iconColor="#DCDCDC" iconFamily="antdesign" style={ styles.iconStyle } onPress={() => this.props.navigation.navigate('ProjectTasks')}>
-                                                </Button>
-                                            </Block>
-                                        </Block>
-                                    </Card>
-                                </TouchableOpacity>
-                            )
-                        })}    
+                                        </Card>
+                                    </TouchableOpacity>
+                                )
+                            })}    
                         </Block>
-                        </ScrollView>
+                    </ScrollView>
 
                     <Block style={ styles.footer }>
                         <Block style={ styles.footerBtns }>
-                            <Button style={ styles.footerBtn } onPress={() => this.props.navigation.navigate('Admin')}>
+                            <Button style={ styles.footerBtn } onPress={() => this.props.navigation.navigate('Projects')}>
                                 <Ionicons name="md-laptop" style={ styles.icon } />
                                 <Text h5>Projects</Text>
                             </Button>
-                            <Button style={ styles.footerBtn } onPress={() => this.props.navigation.navigate('TasksOpen')}>
+                            <Button style={ styles.footerBtn } onPress={() => this.props.navigation.navigate('TasksOpenSA')}>
                             <Ionicons name="md-calendar" style={ styles.icon } />
                                 <Text h5>Tasks</Text>
                             </Button>
@@ -145,6 +145,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'flex-end',
+        marginTop: 10,
         marginBottom: 45
     },
     footerBtns: {
@@ -162,4 +163,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Admin;
+export default Projects;

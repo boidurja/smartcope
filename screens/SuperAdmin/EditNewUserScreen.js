@@ -10,7 +10,7 @@ class AddNewUser extends Component {
     render() {
     return (
         <Block style={ styles.blockStyle }>
-            <Header title="Users" />
+            <Header title="Users" navigation={this.props.navigation}/>
             <Block>
                 <Text p style={ styles.editNew }>Edit New User</Text>
                 <Input placeholder="First Name" rounded />
